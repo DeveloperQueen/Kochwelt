@@ -10,7 +10,7 @@
     <header></header>
 
     <main>
-      <h2>Königsberger Klopse</h2>
+      <h1>Königsberger Klopse</h1>
 
       <img class="recipe-atf" src="./img/Königsberger Klopse.png" alt="" />
 
@@ -33,7 +33,9 @@
         </div>
       </div>
 
-      <div id="calcCon" class="margin-recipe port-calc stacked2">
+      <div class="border-line"></div>
+
+      <div class="calc-con">
         <span>Zutaten für</span>
         <input
           class="calc-input"
@@ -44,12 +46,13 @@
         />
 
         <button
-          class="calc-button"
+          class="button"
           id="button"
           onclick="generateIngredientsTable()"
         >
           Portionen
         </button>
+      </div>
 
         <table class="ingredients margin-recipe">
           <tbody id="ingredientsTable">
