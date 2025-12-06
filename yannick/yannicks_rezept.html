@@ -18,114 +18,112 @@
 </head>
 
 <body>
-    <div class="page">
-        <header>
-            <div w3-include-html="../templates/header.html"></div>
-        </header>
+    <header class="site-header">
+        <div w3-include-html="../templates/header.html"></div>
+    </header>
 
-        <main>
-            <section class="container">
-                <h1>Rinderroulade mit Rotkohl & Kartoffelklößen</h1>
-                <img src="../img/food.jpg" alt="Bild von Rinderroulade mit Rotkohl & Kartoffelklößen">
-            </section>
+    <main class="page">
+        <section class="container">
+            <h1>Rinderroulade mit Rotkohl & Kartoffelklößen</h1>
+            <img src="../img/food.jpg" alt="Bild von Rinderroulade mit Rotkohl & Kartoffelklößen">
+        </section>
+        <div class="cooking_bar">
+            <div class="cooking_label">
+                <img src="../img/icons/clock-regular.svg">
+                <div>30 Min.</div>
+            </div>
+            <div class="cooking_label">
+                <img src="../img/icons/brain-solid.svg">
+                <div>normal</div>
+            </div>
+            <div class="cooking_label">
+                <img src="../img/icons/calendar-alt-regular.svg">
+                <div>04.12.2025</div>
+            </div>
+        </div>
+
+        <div class="second_line"></div>
+
+        <section class="ingrediants">
+            <div class="calculator_bar">
+                <span>Zutaten für</span>
+
+                <div class="portion_box">
+                    <input id="portionInput" type="number" min="1" value="1">
+                    <button onclick="calculatePortions()">Portionen</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="ingredients_table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="amount" data-base="2">2</td>
+                        <td>Roulade(n) vom Rind</td>
+                    </tr>
+                    <tr>
+                        <td class="amount" data-base="1">1</td>
+                        <td>Pkg. Speck gewürfelt</td>
+                    </tr>
+                    <tr>
+                        <td class="amount" data-base="3">3</td>
+                        <td>Zwiebel(n)</td>
+                    </tr>
+                    <tr>
+                        <td class="amount" data-base="1">1</td>
+                        <td>Karotte(n)</td>
+                    </tr>
+                    <tr>
+                        <td class="amount" data-base="1">1</td>
+                        <td>Glas Rotkohl</td>
+                    </tr>
+                    <tr>
+                        <td class="amount" data-base="1">1</td>
+                        <td>Pkt. Kloßteig</td>
+                    </tr>
+                    <tr>
+                        <td class="amount" data-base="">–</td>
+                        <td>Salz und Pfeffer</td>
+                    </tr>
+                    <tr>
+                        <td class="amount" data-base="1">1</td>
+                        <td>Becher Sahne</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="preparation">
+            <h2>Zubereitung</h2>
+
             <div class="cooking_bar">
                 <div class="cooking_label">
-                    <img src="../img/icons/clock-regular.svg">
-                    <div>30 Min.</div>
+                    <img src="../img/icons/clock-regular.svg" alt="">
+                    <div>ca. 30 Min.</div>
                 </div>
                 <div class="cooking_label">
-                    <img src="../img/icons/brain-solid.svg">
-                    <div>normal</div>
-                </div>
-                <div class="cooking_label">
-                    <img src="../img/icons/calendar-alt-regular.svg">
-                    <div>04.12.2025</div>
+                    <img src="../img/icons/clock-regular.svg" alt="">
+                    <div>Gesamtzeit ca. 30 Min.</div>
                 </div>
             </div>
 
-            <div class="second_line"></div>
-
-            <section class="ingrediants">
-                <div class="calculator_bar">
-                    <span>Zutaten für</span>
-
-                    <div class="portion_box">
-                        <input id="portionInput" type="number" min="1" value="1">
-                        <button onclick="calculatePortions()">Portionen</button>
-                    </div>
-                </div>
-            </section>
-
-            <section class="ingredients_table">
-                <table>
-                    <tbody>
-                        <tr>
-                            <td class="amount" data-base="2">2</td>
-                            <td>Roulade(n) vom Rind</td>
-                        </tr>
-                        <tr>
-                            <td class="amount" data-base="1">1</td>
-                            <td>Pkg. Speck gewürfelt</td>
-                        </tr>
-                        <tr>
-                            <td class="amount" data-base="3">3</td>
-                            <td>Zwiebel(n)</td>
-                        </tr>
-                        <tr>
-                            <td class="amount" data-base="1">1</td>
-                            <td>Karotte(n)</td>
-                        </tr>
-                        <tr>
-                            <td class="amount" data-base="1">1</td>
-                            <td>Glas Rotkohl</td>
-                        </tr>
-                        <tr>
-                            <td class="amount" data-base="1">1</td>
-                            <td>Pkt. Kloßteig</td>
-                        </tr>
-                        <tr>
-                            <td class="amount" data-base="">–</td>
-                            <td>Salz und Pfeffer</td>
-                        </tr>
-                        <tr>
-                            <td class="amount" data-base="1">1</td>
-                            <td>Becher Sahne</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <section class="preparation">
-                <h2>Zubereitung</h2>
-
-                <div class="cooking_bar">
-                    <div class="cooking_label">
-                        <img src="../img/icons/clock-regular.svg" alt="">
-                        <div>ca. 30 Min.</div>
-                    </div>
-                    <div class="cooking_label">
-                        <img src="../img/icons/clock-regular.svg" alt="">
-                        <div>Gesamtzeit ca. 30 Min.</div>
-                    </div>
-                </div>
-
-                <ol class="preparation_steps">
-                    <li>Rouladen von einer Seite mit Senf bestreichen, salzen und pfeffern.</li>
-                    <li>2 Zwiebeln in Würfel schneiden und jeweils ein Häufchen auf die Rouladen legen,
-                        sowie eine Handvoll gewürfelten Speck. Nun muss die Roulade nur noch gerollt
-                        und mit Zahnstochern befestigt werden.</li>
-                    <li>Rouladen in eine Auflaufform legen, 1 Zwiebel mit Schale schneiden, eine Karotte
-                        putzen und in Stücke schneiden. Beides in die Auflaufform geben und Wasser hinzufügen.
-                        Deckel auf die Auflaufform geben und bei 180 Grad Umluft für zwei Stunden in den Backofen
-                        stellen. Die letzte halbe Stunde den Deckel abnehmen. Zum Schluss die Soße abgießen,
-                        aufkochen und Sahne hinzugeben.</li>
-                    <li>Blaukraut in einen Topf geben, mit Essig und Zucker abschmecken und 15 Minuten köcheln lassen.
-                    </li>
-                    <li>Kartoffelklöße rollen und für 20 Minuten ins kochende Wasser geben.
-                        Vorsicht: Wasser darf während dieser Zeit nicht mehr kochen.</li>
-                </ol>
-            </section>
-        </main>
+            <ol class="preparation_steps">
+                <li>Rouladen von einer Seite mit Senf bestreichen, salzen und pfeffern.</li>
+                <li>2 Zwiebeln in Würfel schneiden und jeweils ein Häufchen auf die Rouladen legen,
+                    sowie eine Handvoll gewürfelten Speck. Nun muss die Roulade nur noch gerollt
+                    und mit Zahnstochern befestigt werden.</li>
+                <li>Rouladen in eine Auflaufform legen, 1 Zwiebel mit Schale schneiden, eine Karotte
+                    putzen und in Stücke schneiden. Beides in die Auflaufform geben und Wasser hinzufügen.
+                    Deckel auf die Auflaufform geben und bei 180 Grad Umluft für zwei Stunden in den Backofen
+                    stellen. Die letzte halbe Stunde den Deckel abnehmen. Zum Schluss die Soße abgießen,
+                    aufkochen und Sahne hinzugeben.</li>
+                <li>Blaukraut in einen Topf geben, mit Essig und Zucker abschmecken und 15 Minuten köcheln lassen.
+                </li>
+                <li>Kartoffelklöße rollen und für 20 Minuten ins kochende Wasser geben.
+                    Vorsicht: Wasser darf während dieser Zeit nicht mehr kochen.</li>
+            </ol>
+        </section>
 
         <section class="author">
             <h2>Rezept erstellt von</h2>
@@ -135,10 +133,11 @@
             </div>
         </section>
 
-        <footer>
-            <div w3-include-html="../templates/footer.html"></div>
-        </footer>
-    </div>
+    </main>
+
+    <footer class="site-footer">
+        <div w3-include-html="../templates/footer.html"></div>
+    </footer>
     <script>
         function calculatePortions() {
 

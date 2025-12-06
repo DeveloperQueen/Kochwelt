@@ -1,8 +1,14 @@
-html {
-    font-family: "Raleway", sans-serif;
+html,
+body {
+    height: 100%;
+}
+
+body {
     margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Raleway", sans-serif;
 }
 
 h1 {
@@ -12,16 +18,27 @@ h1 {
     font-weight: 600;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    height: 100px;
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
-.header img {
-    height: 80px;
-    padding-bottom: 12px;
+.header-inner {
+    max-width: 1920px;
+    margin: 0 auto;
+    height: 120px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 24px;
+}
+
+.header-inner img {
+    height: 100px;
+    padding-bottom: 10px;
 }
 
 button {
@@ -34,18 +51,10 @@ button {
 }
 
 .page {
+    flex: 1;
     width: 90%;
     max-width: 1920px;
     margin: 0 auto;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-.line {
-    height: 1px;
-    width: 100%;
-    box-shadow: 0px 3px 6px rgba(123, 123, 130, 0.9);
 }
 
 .quicklinks {
@@ -70,26 +79,44 @@ button {
     text-underline-offset: 8px;
 }
 
-.footer {
+.site-footer {
+    width: 100%;
     background-color: #403B3B;
-    height: 250px;
-    margin-top: 64px;
+    color: #ffffff;
+    margin-top: 60px;
+    padding: 30px 0;
+}
+
+.footer-inner {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0px 24px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.footer img {
-    height: 80px;
+.footer-inner div img {
+    height: 45px;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
 }
 
-.footer_socials img {
-    height: 24px;
-    width: auto;
-    margin-left: 16px;
+.footer-nav {
+    display: flex;
+    gap: 42px;
 }
 
-.footer_socials:hover {
-    cursor: pointer;
-    filter: drop-shadow(0px 0px 4px #FFFFFF);
+.footer_links {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    opacity: 0.8;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.footer_links:hover {
+    opacity: 1;
 }
