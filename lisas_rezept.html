@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./lisa.css" />
+    <script src="./lisa.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Käsespätzle mit Röstzwiebeln</title>
+  </head>
+  <body>
+    <header>
+      <div class="content navbar">
+        <img
+          src="./03 - Gruppenarbeit - Kochwelt/img/logo.png"
+          alt="Kochwelt Logo"
+        />
+        <nav>
+          <ul>
+            <td><a href="#start">Start</a></td>
+            <td><a href="#recipe">Rezept des Tages</a></td>
+            <td><a href="#contact">Kontakt</a></td>
+            <td><a href="#impressum">Impressum</a></td>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="content container">
+      <h1>Käsespätzle mit Röstzwiebeln</h1>
+      <img
+        class="meal_image"
+        src="./03 - Gruppenarbeit - Kochwelt/img/img_lisa/cheese-noodles-609776_1280.jpg"
+        alt="meal Käsespätzle"
+      />
+
+      <div class="content recipe_meta">
+        <div class="meta">
+          <img
+            src="./03 - Gruppenarbeit - Kochwelt/img/icons/clock-regular.svg"
+            alt="icon clock"
+          />
+          30 Min.
+        </div>
+        <div class="meta">
+          <img
+            src="./03 - Gruppenarbeit - Kochwelt/img/icons/brain-solid.svg"
+            alt="icon brain"
+          />
+          simpel
+        </div>
+        <div class="meta">
+          <img
+            src="./03 - Gruppenarbeit - Kochwelt/img/icons/calendar-alt-regular.svg"
+            alt="icon calendar"
+          />
+          <span id="date"></span>
+        </div>
+      </div>
+      <hr class="separator" />
+    </div>
+
+    <main class="content recipe-content">
+      <div class="portion_container">
+        <span>Zutaten für</span>
+        <div class="portion_calculator">
+          <input type="number" id="portions" value="4" min="1" max="10" />
+          <button id="portion_button" type="button">Portionen</button>
+        </div>
+      </div>
+
+      <ul class="ingredient_list" id="ingredients">
+        <li data-amount="1000" data-unit="g">1000g Spätzle</li>
+        <li data-amount="300" data-unit="g">300g Zwiebeln</li>
+        <li data-amount="250" data-unit="g">250g Käse</li>
+        <li data-amount="3" data-unit="EL">3EL Mehl</li>
+        <li data-amount="75" data-unit="g">75g Sahne</li>
+        <li data-amount="50" data-unit="g">50g Butterschmalz</li>
+        <li data-amount="0" data-unit="">
+          Schnittlauch, Salz, Pfeffer, Muskat
+        </li>
+      </ul>
+    </main>
+
+    <section class="content recipe_preparation">
+      <h2>Zubereitung</h2>
+
+      <div class="content preparation_meta">
+        <div class="meta">
+          <img
+            src="./03 - Gruppenarbeit - Kochwelt/img/icons/clock-regular.svg"
+            alt="icon clock"
+          />
+          ca. 15 Minuten
+        </div>
+        <div class="meta">
+          <img
+            src="./03 - Gruppenarbeit - Kochwelt/img/icons/clock-regular.svg"
+            alt="icon clock"
+          />
+          Gesamtzeit ca. 30 Minuten
+        </div>
+      </div>
+
+      <div class="preparation_steps">
+        <div class="preparation_steps">
+          Die Spätzle in kochendem Wasser garen und anschließend abtropfen
+          lassen. Die Zwiebeln halbieren, schälen und in dünne Halbringe
+          schneiden. Die geschnittenen Zwiebelringe mit etwas Mehl bestäuben,
+          dann in Butterschmalz goldbraun braten und anschließend abtropfen
+          lassen. Den Käse fein reiben. Die Pfanne kurz reduzieren, die Sahne
+          hinzufügen und alles nach Geschmack würzen. Die Spätzle unter die
+          Sahne mischen, den geriebenen Käse darüber streuen und die Pfanne
+          abdecken, bis der Käse geschmolzen ist. Die Käsespätzle auf Tellern
+          anrichten und mit den goldbraunen Röstzwiebeln sowie frischem
+          Schnittlauch servieren.
+        </div>
+      </div>
+    </section>
+
+    <aside class="content">
+      <h3>Rezept erstellt von</h3>
+      <div class="recipe_author">
+        <img
+          src="./03 - Gruppenarbeit - Kochwelt/img/profile.png"
+          alt="Profile picture of Lisa"
+        />
+        <div class="profile_name">
+          <p>Lisa</p>
+        </div>
+      </div>
+    </aside>
+    <footer></footer>
+  </body>
+</html>
