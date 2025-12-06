@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Königsberger Klopse</title>
     <link rel="stylesheet" href="jenny_rezept_style.css" />
+    <link rel="stylesheet" href="../style.css" />
+
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
   </head>
   <body>
-    <header></header>
+    <header>
+      <div w3-include-html="../templates/header.html"></div>
+    </header>
 
     <main>
       <h1>Königsberger Klopse</h1>
@@ -16,18 +21,18 @@
 
       <div class="recipe-info">
         <div class="recipe-info-down">
-          <img class="recipes-icon" src="./img/icons/clock-regular.svg" />
+          <img class="recipes-icon" src="../img/icons/clock-regular.svg" />
           <div>15 Min.</div>
         </div>
 
         <div class="recipe-info-down">
-          <img class="recipes-icon" src="./img/icons/brain-solid.svg" />
+          <img class="recipes-icon" src="../img/icons/brain-solid.svg" />
           <div>simpel</div>
         </div>
         <div class="recipe-info-down">
           <img
             class="recipes-icon"
-            src="./img/icons/calendar-alt-regular.svg"
+            src="../img/icons/calendar-alt-regular.svg"
           />
           <div>15.08.2023</div>
         </div>
@@ -41,14 +46,14 @@
           class="calc-input"
           id="portion"
           type="number"
-          value="6"
+          value="4"
           min="3"
         />
 
         <button
           class="button"
           id="button"
-          onclick="generateIngredientsTable()"
+          onclick="calculatePortions()"
         >
           Portionen
         </button>
@@ -57,79 +62,79 @@
         <table class="ingredients margin-recipe">
           <tbody id="ingredientsTable">
             <tr class="grey-deposit">
-              <td>1</td>
+              <td class="amount">1</td>
               <td>Stk.</td>
               <td>Brötchen</td>
             </tr>
 
             <tr class="">
-              <td>1</td>
+              <td class="amount">1</td>
               <td>Stk.</td>
               <td>Zwiebel</td>
             </tr>
 
             <tr class="grey-deposit">
-              <td>500</td>
+              <td class="amount">500</td>
               <td>gr.</td>
               <td>Hackfleisch gemischt</td>
             </tr>
 
             <tr class="">
-              <td>1</td>
+              <td class="amount">1</td>
               <td>Stk.</td>
               <td>Ei (Größe M)</td>
             </tr>
 
             <tr class="grey-deposit">
-              <td>1</td>
+              <td class="amount">1</td>
               <td>TL</td>
               <td>Senf</td>
             </tr>
 
             <tr class="">
-              <td>1</td>
+              <td class="amount">1</td>
               <td>TL</td>
               <td>Majoran (getrocknet)</td>
             </tr>
 
             <tr class="grey-deposit">
-              <td>500</td>
+              <td class="amount">500</td>
               <td>ml</td>
               <td>Fleischbrühe</td>
             </tr>
 
             <tr class="">
-              <td>2</td>
+              <td class="amount">2</td>
               <td>Stk.</td>
               <td>Essiggurken</td>
             </tr>
 
             <tr class="grey-deposit">
-              <td>1</td>
+              <td class="amount">1</td>
               <td>EL</td>
               <td>Butter</td>
             </tr>
 
             <tr class="">
-              <td>1</td>
+              <td class="amount">1</td>
               <td>EL</td>
               <td>Mehl</td>
             </tr>
 
             <tr class="grey-deposit">
-              <td>2</td>
+              <td class="amount">2</td>
               <td>EL</td>
               <td>Kapern</td>
             </tr>
 
             <tr class="">
-              <td>1</td>
+              <td class="amount">1</td>
               <td>TL</td>
               <td>Zucker</td>
             </tr>
 
             <tr class="grey-deposit">
-              <td>1</td>
+              <td class="amount">1</td>
               <td>EL</td>
               <td>Weißweinessig</td>
             </tr>
@@ -146,11 +151,11 @@
 
         <div class="recipe-info">
           <div class="recipe-info-down">
-            <img class="recipes-icon" src="./img/icons/clock-regular.svg" />
+            <img class="recipes-icon" src="../img/icons/clock-regular.svg" />
             <div>ca. 15 Minuten</div>
           </div>
           <div class="recipe-info-down">
-            <img class="recipes-icon" src="./img/icons/clock-regular.svg" />
+            <img class="recipes-icon" src="../img/icons/clock-regular.svg" />
             <div>Gesamtzeit ca. 15 Minuten</div>
           </div>
         </div>
@@ -193,5 +198,28 @@
     </main>
 
     <footer></footer>
+
+    <script>
+        function calculatePortions() {
+
+            let input = document.getElementById('portion');
+
+            let portions = Number(input.value);
+
+            if (isNaN(portions) || portions < 1) {
+                portions = 1;
+                input.value = 1;
+            }
+
+            let amounts = document.querySelectorAll('.amount');
+
+            amounts.forEach(amount => {
+                let base = Number(amount.getAttribute('td:first-child'));
+                amount.textContent = base * portions;
+            });
+        }
+
+        w3.includeHTML()
+    </script>
   </body>
 </html>
