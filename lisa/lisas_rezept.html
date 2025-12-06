@@ -134,5 +134,55 @@
       </div>
     </aside>
     <footer></footer>
+    <script>
+      const dateElement = document.getElementById("date");
+
+const today = new Date();
+const day = today.getDate();
+const month = today.getMonth() + 1;
+const year = today.getFullYear();
+
+const formattedDate = `${day}.${month}.${year}`;
+
+dateElement.textContent = formattedDate; 
+
+
+
+
+const defaultPortions = 4;
+const portionInput = document.getElementById('portions');
+const portionButton = document.getElementById('portion_button');
+const ingredients = document.querySelectorAll('#ingredients li');
+
+// Originalwerte speichern
+ingredients.forEach(li => {
+  li.dataset.originalAmount = li.dataset.amount;
+  li.dataset.originalText = li.textContent;
+});
+
+function updateIngredients() {
+  const inputValue = portionInput.value.trim();
+  if (!inputValue || isNaN(inputValue)) return; // nur rechnen, wenn Zahl
+
+  const newPortions = parseInt(inputValue);
+
+  ingredients.forEach(li => {
+    const amount = parseFloat(li.dataset.originalAmount);
+    const unit = li.dataset.unit;
+    const name = li.dataset.originalText.replace(/^\d+(\.\d+)?\s*\w*\s*/, '').trim();
+
+    if (!amount) {
+      li.textContent = name; // keine Menge
+    } else {
+      let newAmount = (amount / defaultPortions) * newPortions;
+      newAmount = unit.toLowerCase() === 'g' ? Math.round(newAmount) : Math.round(newAmount * 10) / 10;
+      li.textContent = `${newAmount}${unit} ${name}`;
+    }
+  });
+}
+
+portionButton.addEventListener('click', updateIngredients);
+
+    </script>
   </body>
 </html>
