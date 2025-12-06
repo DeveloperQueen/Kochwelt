@@ -46,8 +46,8 @@
           class="calc-input"
           id="portion"
           type="number"
-          value="4"
-          min="3"
+          value="1"
+          min="1"
         />
 
         <button
@@ -62,79 +62,80 @@
         <table class="ingredients margin-recipe">
           <tbody id="ingredientsTable">
             <tr class="grey-deposit">
-              <td class="amount">1</td>
+              
+              <td class="amount" data-base="1">1</td>
               <td>Stk.</td>
               <td>Brötchen</td>
             </tr>
 
             <tr class="">
-              <td class="amount">1</td>
+              <td class="amount" data-base="1" >1</td>
               <td>Stk.</td>
               <td>Zwiebel</td>
             </tr>
 
             <tr class="grey-deposit">
-              <td class="amount">500</td>
+              <td class="amount" data-base="500">500</td>
               <td>gr.</td>
               <td>Hackfleisch gemischt</td>
             </tr>
 
             <tr class="">
-              <td class="amount">1</td>
+              <td class="amount" data-base="1">1</td>
               <td>Stk.</td>
               <td>Ei (Größe M)</td>
             </tr>
 
             <tr class="grey-deposit">
-              <td class="amount">1</td>
+              <td class="amount" data-base="1">1</td>
               <td>TL</td>
               <td>Senf</td>
             </tr>
 
             <tr class="">
-              <td class="amount">1</td>
+              <td class="amount" data-base="1">1</td>
               <td>TL</td>
               <td>Majoran (getrocknet)</td>
             </tr>
 
             <tr class="grey-deposit">
-              <td class="amount">500</td>
+              <td class="amount" data-base="500">500</td>
               <td>ml</td>
               <td>Fleischbrühe</td>
             </tr>
 
             <tr class="">
-              <td class="amount">2</td>
+              <td class="amount" data-base="2">2</td>
               <td>Stk.</td>
               <td>Essiggurken</td>
             </tr>
 
             <tr class="grey-deposit">
-              <td class="amount">1</td>
+              <td class="amount" data-base="1">1</td>
               <td>EL</td>
               <td>Butter</td>
             </tr>
 
             <tr class="">
-              <td class="amount">1</td>
+              <td class="amount" data-base="1">1</td>
               <td>EL</td>
               <td>Mehl</td>
             </tr>
 
             <tr class="grey-deposit">
-              <td class="amount">2</td>
+              <td class="amount" data-base="2">2</td>
               <td>EL</td>
               <td>Kapern</td>
             </tr>
 
             <tr class="">
-              <td class="amount">1</td>
+              <td class="amount" data-base="1">1</td>
               <td>TL</td>
               <td>Zucker</td>
             </tr>
 
             <tr class="grey-deposit">
-              <td class="amount">1</td>
+              <td class="amount" data-base="1">1</td>
               <td>EL</td>
               <td>Weißweinessig</td>
             </tr>
@@ -214,7 +215,7 @@
             let amounts = document.querySelectorAll('.amount');
 
             amounts.forEach(amount => {
-                let base = Number(amount.getAttribute('td:first-child'));
+                let base = Number (amount.getAttribute('data-base'));
                 amount.textContent = base * portions;
             });
         }
