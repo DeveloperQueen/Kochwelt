@@ -127,13 +127,13 @@
     font-weight: 600;
 }
 
-.footer div img {
+.author div img {
     height: 100px;
     border-radius: 50%;
     width: 100px;
 }
 
-.footer div {
+.author div {
     display: flex;
     align-items: center;
     gap: 24px;
