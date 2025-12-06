@@ -13,6 +13,7 @@
     <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32">
 
     <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="../dom.js"></script>
 </head>
 
 <body>
@@ -31,10 +32,12 @@
         <footer class="site-footer">
             <div w3-include-html="../templates/footer.html"></div>
         </footer>
-        
+
     </div>
     <script>
-        w3.includeHTML()
+        w3.includeHTML(function () {
+            initNavigation();
+        });
     </script>
 
 </body>
