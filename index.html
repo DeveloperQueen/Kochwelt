@@ -1,43 +1,113 @@
 <!DOCTYPE html>
 <html lang="de">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kochwelt</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link rel="icon" type="image/png" href="./img/favicon.png" sizes="32x32">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="./img/favicon.png" sizes="32x32" />
 
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     <script src="./dom.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="layout">
+      <header class="site-header">
+        <div w3-include-html="../templates/header.html"></div>
+      </header>
 
-        <header class="site-header">
-            <div w3-include-html="../templates/header.html"></div>
-        </header>
+      <main class="page">
+        <div class="rdt-atf">
+          <img class="rdt-atf-pic" src="./img/tiramisu.jpg" alt="" />
 
-        <main class="page">
+          <span class="rdt-span">
+            <h1>Köstliches Tiramisu</h1>
 
-            <p>Hier kommt der Main-Inhalt hin</p>
+            Das italienische Dessert Tiramisu erfreut sich überall großer
+            Beliebtheit. <br />
+            So auch bei uns. <br />
+            Deshalb haben wir dieses absolut gelingsichere Original-Rezept für
+            Sie <br />
+            als Rezept des Tages ausgewählt.
 
-        </main>
+            <button onclick="" class="rdt-button">Rezept öffnen</button>
+          </span>
+        </div>
 
-        <footer class="site-footer">
-            <div w3-include-html="../templates/footer.html"></div>
-        </footer>
+        <div class="sec-con">
+          <div class="sec-overline">
+            <h1>Lust auf was Neues?</h1>
+          </div>
+          <div class="section-links margin-recipe stacked">
+            <div class="quicklink">
+              <img
+                onclick=""
+                src="./img/cheese-noodles-609776_1280.jpg"
+                alt="Käsespätzle"
+              />
+              <h4 onclick="">
+                Käsespätzle mit <br />
+                Röstzwiebeln
+              </h4>
+            </div>
+            <div class="quicklink">
+              <img
+                onclick=""
+                src="./img/food.jpg"
+                alt="Rinderroulade mit Rotkohl & Kartoffelklößen"
+              />
+              <h4 onclick="">
+                Rinderroulade mit <br />
+                Rotkohl & Kartoffelklößen
+              </h4>
+            </div>
+            <div class="quicklink">
+              <img
+                onclick=""
+                src="./img/Königsberger Klopse.png"
+                alt="Königsberger Klopse"
+              />
+              <h4 onclick="">
+                Königsberger <br />
+                Klopse
+              </h4>
+            </div>
+          </div>
+        </div>
 
+        <div class="overscrpt-below">
+          <h1>Pommes - lecker aber ungesund?</h1>
+        </div>
+
+        <div class="rdt-below">
+          <span>
+            Außen knusprig, innen locker - so schmecken Pommes am besten. <br />
+            "Fritten" sind beliebt, aber relativ ungesund. <br />
+            Gesünder als Industrieware sind selbst gemachte Pommes aus <br />
+            Kartoffeln oder Süßkartoffeln.
+          </span>
+
+          <img
+            class="rdt-pic-below"
+            src="./img/pommes.jpg"
+            alt="Pommes auf Hände"
+          />
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <div w3-include-html="../templates/footer.html"></div>
+      </footer>
     </div>
     <script>
-        w3.includeHTML(initNavigation);
+      w3.includeHTML(initNavigation);
     </script>
-
-</body>
-
+  </body>
 </html>
