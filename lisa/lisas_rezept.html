@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="../fonts/fonts.css">
     <link rel="stylesheet" href="../lisa/lisa_rezept_style.css" />
      <script src="https://www.w3schools.com/lib/w3.js"></script>
-    <script src="./lisa.js" defer></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Käsespätzle mit Röstzwiebeln</title>
@@ -13,21 +13,8 @@
 
   <body>
     <header>
-      <div class="content navbar">
-        <img
-          src="../img/logo.png"
-          alt="Kochwelt Logo"
-        />
-        <nav>
-          <ul>
-            <td><a href="#start">Start</a></td>
-            <td><a href="#recipe">Rezept des Tages</a></td>
-            <td><a href="#contact">Kontakt</a></td>
-            <td><a href="#impressum">Impressum</a></td>
-          </ul>
-        </nav>
-      </div>
-    </header>
+            <div w3-include-html="../templates/header.html"></div>
+        </header>
 
     <div class="content container">
       <h1>Käsespätzle mit Röstzwiebeln</h1>
@@ -57,33 +44,68 @@
             src="../img/icons/calendar-alt-regular.svg"
             alt="icon calendar"
           />
-          <span id="date"></span>
+          04.12.2025
         </div>
       </div>
       <hr class="separator" />
     </div>
 
     <main class="content recipe-content">
-      <div class="portion_container">
+    <div class="portion_container">
         <span>Zutaten für</span>
         <div class="portion_calculator">
-          <input type="number" id="portions" value="4" min="1" max="10" />
-          <button id="portion_button" type="button">Portionen</button>
+            <input type="number" id="portionInput" value="1" min="1" />
+            <button id="portion_button" type="button" onclick="calculatePortions()">Portionen</button>
         </div>
-      </div>
+    </div>
 
-      <ul class="ingredient_list" id="ingredients">
-        <li data-amount="1000" data-unit="g">1000g Spätzle</li>
-        <li data-amount="300" data-unit="g">300g Zwiebeln</li>
-        <li data-amount="250" data-unit="g">250g Käse</li>
-        <li data-amount="3" data-unit="EL">3EL Mehl</li>
-        <li data-amount="75" data-unit="g">75g Sahne</li>
-        <li data-amount="50" data-unit="g">50g Butterschmalz</li>
-        <li data-amount="0" data-unit="">
-          Schnittlauch, Salz, Pfeffer, Muskat
-        </li>
-      </ul>
-    </main>
+<section class="ingredients_table">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+        <span class="amount" data-base="1000">1000</span>g
+    </td>
+    <td>Spätzle</td>
+                        </tr>
+                        <tr>
+                           <td>
+        <span class="amount" data-base="300">300</span>g
+    </td>
+                            <td>Zwiebeln</td>
+                        </tr>
+                        <tr>
+                            <td><span class="amount" data-base="250">250</span></td>
+                            <td>würziger Käse</td>
+                        </tr>
+                        <tr>
+                           <td>
+        <span class="amount" data-base="3">3</span>EL
+    </td>
+                            <td>Mehl</td>
+                        </tr>
+                        <tr>
+                            <td>
+        <span class="amount" data-base="75">75</span>g
+    </td>
+                            <td>Sahne</td>
+                        </tr>
+                        <tr>
+                          <td>
+        <span class="amount" data-base="50">50</span>g
+    </td>
+                            <td>Butterschmalz</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Salz, Pfeffer, Schnittlauch</td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </section>
+</main>
+
 
     <section class="content recipe_preparation">
       <h2>Zubereitung</h2>
@@ -105,7 +127,7 @@
         </div>
       </div>
 
-      <div class="preparation_steps">
+      
         <div class="preparation_steps">
           Die Spätzle in kochendem Wasser garen und anschließend abtropfen
           lassen. Die Zwiebeln halbieren, schälen und in dünne Halbringe
@@ -117,7 +139,7 @@
           abdecken, bis der Käse geschmolzen ist. Die Käsespätzle auf Tellern
           anrichten und mit den goldbraunen Röstzwiebeln sowie frischem
           Schnittlauch servieren.
-        </div>
+      
       </div>
     </section>
 
@@ -133,56 +155,30 @@
         </div>
       </div>
     </aside>
-    <footer></footer>
-    <script>
-      const dateElement = document.getElementById("date");
+    <footer>
+            <div w3-include-html="../templates/footer.html"></div>
+        </footer>
 
-const today = new Date();
-const day = today.getDate();
-const month = today.getMonth() + 1;
-const year = today.getFullYear();
+     <script>
+        function calculatePortions() {
 
-const formattedDate = `${day}.${month}.${year}`;
+            let input = document.getElementById('portionInput');
 
-dateElement.textContent = formattedDate; 
+            let portions = Number(input.value);
 
+            if (isNaN(portions) || portions < 1) {
+                portions = 1;
+                input.value = 1;
+            }
 
+            let amounts = document.querySelectorAll('.amount');
 
-
-const defaultPortions = 4;
-const portionInput = document.getElementById('portions');
-const portionButton = document.getElementById('portion_button');
-const ingredients = document.querySelectorAll('#ingredients li');
-
-// Originalwerte speichern
-ingredients.forEach(li => {
-  li.dataset.originalAmount = li.dataset.amount;
-  li.dataset.originalText = li.textContent;
-});
-
-function updateIngredients() {
-  const inputValue = portionInput.value.trim();
-  if (!inputValue || isNaN(inputValue)) return; // nur rechnen, wenn Zahl
-
-  const newPortions = parseInt(inputValue);
-
-  ingredients.forEach(li => {
-    const amount = parseFloat(li.dataset.originalAmount);
-    const unit = li.dataset.unit;
-    const name = li.dataset.originalText.replace(/^\d+(\.\d+)?\s*\w*\s*/, '').trim();
-
-    if (!amount) {
-      li.textContent = name; // keine Menge
-    } else {
-      let newAmount = (amount / defaultPortions) * newPortions;
-      newAmount = unit.toLowerCase() === 'g' ? Math.round(newAmount) : Math.round(newAmount * 10) / 10;
-      li.textContent = `${newAmount}${unit} ${name}`;
-    }
-  });
-}
-
-portionButton.addEventListener('click', updateIngredients);
-
+            amounts.forEach(amount => {
+                let base = Number(amount.getAttribute('data-base'));
+                amount.textContent = base * portions;
+            });
+        }
+        w3.includeHTML()
     </script>
   </body>
 </html>
