@@ -208,7 +208,7 @@ button {
 
 .section-links{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding-bottom: 160px;
 
 }
@@ -239,6 +239,7 @@ button {
 
 .rdt-below{
     display: flex;
+    justify-content: space-evenly;
     font-size: 24px;
 }
 
