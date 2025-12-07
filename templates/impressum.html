@@ -1,45 +1,78 @@
 <!DOCTYPE html>
 <html lang="de">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Impressum</title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32" />
 
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     <script src="../dom.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="layout">
+      <header class="site-header">
+        <div w3-include-html="../templates/header.html"></div>
+      </header>
 
-        <header class="site-header">
-            <div w3-include-html="../templates/header.html"></div>
-        </header>
+      <main class="page">
+        <div class="">
+          <h1>Impressum</h1>
 
-        <main class="page">
+          <div>gemäß § 5 TMG</div>
 
-            <p>Hier kommt das Impressum hin</p>
+          <div class="adress">
+            <div class="b"><b>Jennifer Lammers</b><br /></div>
+            Bischofstraße 9 <br />
+            49497 Mettingen<br />
+            Deutschland
+          </div>
 
-        </main>
+          <div class="adress">
+            <div><b>Kontakt</b><br /></div>
+            Telefon: <a href="tel:+496605757570"><br />+49 (0)660 57 57 57 0</a
+            ><br /><br />
+            E-Mail:
+            <a href="mailto:jennylammers@gmail.com"
+              ><br />jennylammers@gmail.com</a
+            >
+          </div>
 
-        <footer class="site-footer">
-            <div w3-include-html="../templates/footer.html"></div>
-        </footer>
+          <div class="logo-icons">
+            Created my free logo at
+            <a href="https://logomakr.com" target="_blank">LogoMakr.com</a
+            ><br /><br />
+            The icons are provided by
+            <a href="https://fontawesome.com/" rel="nofollow" target="_blank"
+              >FontAwesome</a
+            >
+            unter the
+            <a
+              href="https://fontawesome.com/license"
+              target="_blank"
+              rel="nofollow"
+              >Creative Commons Attribution 4.0 International license</a
+            >.
+          </div>
+        </div>
+      </main>
 
+      <footer class="site-footer">
+        <div w3-include-html="../templates/footer.html"></div>
+      </footer>
     </div>
     <script>
-        w3.includeHTML(function () {
-            initNavigation();
-        });
+      w3.includeHTML(function () {
+        initNavigation();
+      });
     </script>
-
-</body>
-
+  </body>
 </html>
