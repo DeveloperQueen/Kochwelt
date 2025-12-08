@@ -12,12 +12,9 @@ function sendMail(event) {
     },
   })
     .then(() => {
-      // Nach erfolgreichem Versand auf die Danke-Seite weiterleiten
       window.location.href = "./send_mail.html";
     })
     .catch((error) => {
       console.log(error);
-      // Optional: User-Feedback bei Fehlern einbauen
-      // alert("Beim Versenden ist ein Fehler aufgetreten. Bitte versuche es später erneut.");
     });
 }

@@ -6,14 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rinderroulade mit Rotkohl & Kartoffelklößen</title>
 
-    <!-- Globale Styles (Layout, Header, Footer, Basis-Typo) -->
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../fonts/fonts.css">
 
-    <!-- Seiten-spezifische Styles für dieses Rezept -->
     <link rel="stylesheet" href="./yannicks_style.css">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32">
 
     <!-- HTML-Includes & Navigation -->
@@ -24,15 +21,14 @@
 <body>
     <div class="layout">
 
-        <!-- Sticky-Header wird über templates/header.html geladen -->
+        <!-- Einheitlicher Header -->
         <header class="site-header">
             <div w3-include-html="../templates/header.html"></div>
         </header>
 
-        <!-- Hauptinhalt der Rezeptseite -->
         <main class="page">
 
-            <!-- Hero-Bereich: Titel + großes Bild -->
+            <!-- Hero-Bereich -->
             <section class="container">
                 <h1>Rinderroulade mit Rotkohl & Kartoffelklößen</h1>
                 <img src="../img/food.jpg" alt="Rinderroulade mit Rotkohl & Kartoffelklößen">
@@ -151,13 +147,13 @@
 
         </main>
 
-        <!-- Footer wird über templates/footer.html geladen -->
+        <!-- Einheitlicher Footer -->
         <footer class="site-footer">
             <div w3-include-html="../templates/footer.html"></div>
         </footer>
     </div>
 
-    <!-- Seiten-spezifisches Skript: Portionsrechner + HTML-Includes -->
+    <!-- Portionsrechner + HTML-Includes -->
     <script>
         function calculatePortions() {
             const input = document.getElementById('portionInput');

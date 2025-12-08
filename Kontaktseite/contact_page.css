@@ -1,11 +1,11 @@
-/* Haupt-Layout der Kontaktseite: zentriert den Inhalt unter dem Header */
+/* Haupt-Layout der Kontaktseite */
 .page.flex-jc {
   display: flex;
   justify-content: center;
   padding: 60px 16px;
 }
 
-/* Karte / Box für das Formular */
+/* Box für das Formular */
 .contact_container {
   background-color: #e0e0e0;
   border-radius: 12px;
@@ -16,7 +16,6 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
-/* Überschrift im Formular */
 .contact_container h2 {
   margin-top: 0;
   margin-bottom: 16px;
@@ -32,7 +31,6 @@
   font-size: 18px;
 }
 
-/* erster Abstand oben */
 .contact_container form label:first-of-type {
   margin-top: 8px;
 }
@@ -48,7 +46,6 @@
   background-color: #ffffff;
 }
 
-/* Fokus-State – klare, aber dezente Hervorhebung */
 .contact_container input:focus,
 .contact_container textarea:focus {
   outline: none;
@@ -56,19 +53,16 @@
   box-shadow: 0 0 0 2px rgba(0, 128, 0, 0.15);
 }
 
-/* Textarea-Größe + Verhalten */
 .contact_container textarea {
   min-height: 180px;
   resize: vertical;
 }
 
-/* Button-Container */
 .btn_container {
   text-align: center;
   margin-top: 8px;
 }
 
-/* Button erbt Grundstyles aus style.css, hier nur Feintuning */
 #submit_btn {
   min-width: 140px;
   transition: background-color 0.1s ease-in-out, transform 0.1s ease-in-out;
@@ -96,8 +90,6 @@
   max-width: 480px;
 }
 
-
-/* ---------- Responsive Anpassungen ---------- */
 @media (max-width: 600px) {
   .page.flex-jc {
     padding: 40px 16px;

@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kontaktseite</title>
 
-  <!-- Projekt-Styles: zuerst globale Styles, dann Seiten-spezifische -->
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="./contact_page.css" />
   <link rel="stylesheet" href="../fonts/fonts.css" />
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32" />
 
   <!-- W3 Include + Navigation -->
@@ -20,17 +18,15 @@
 
 <body>
   <div class="layout">
-    <!-- Einheitlicher Header (wird per w3.js injected) -->
+    <!-- Einheitlicher Header -->
     <header class="site-header">
       <div w3-include-html="../templates/header.html"></div>
     </header>
 
-    <!-- Seiteninhalt: zentriert, Breite wird über .page aus style.css gesteuert -->
     <main class="page flex-jc">
       <div class="contact_container">
         <h2>Kontaktiere uns</h2>
 
-        <!-- Formspree-Formular: wird in contact-page.js behandelt -->
         <form onsubmit="sendMail(event)">
           <label>
             Dein Name:
@@ -60,7 +56,6 @@
     </footer>
   </div>
 
-  <!-- Seiten-spezifisches JS: Formular-Submit zu Formspree -->
   <script src="./contact-page.js"></script>
 
   <!-- W3-HTML-Includes laden und danach Navigation initialisieren -->
