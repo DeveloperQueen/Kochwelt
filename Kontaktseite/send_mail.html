@@ -1,22 +1,50 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./contact_page.css">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="preconnect" href="../fonts/fonts.css">
-    <link rel="icon" type="image/png" href="./img/favicon.png" sizes="32x32" />
-    <title>Nachricht gesendet</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nachricht gesendet</title>
+
+  <!-- Globale Styles + Seite-spezifische Styles -->
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./contact_page.css" />
+  <link rel="stylesheet" href="../fonts/fonts.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32" />
+
+  <!-- W3 Include + Navigation -->
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <script src="../dom.js"></script>
 </head>
 
 <body>
-    <main class="page">
-        <h1>Danke!</h1>
-        <p>Deine Nachricht wurde erfolgreich gesendet.</p>
-        <a href="../index.html"><button>Zurück zur Startseite</button></a>
-    </main>
-</body>
+  <div class="layout">
+    <!-- Einheitlicher Header -->
+    <header class="site-header">
+      <div w3-include-html="../templates/header.html"></div>
+    </header>
 
+    <!-- Danke-Inhalt -->
+    <main class="page flex-jc thank-page">
+      <h1>Danke!</h1>
+      <p>Deine Nachricht wurde erfolgreich gesendet.</p>
+      <a href="../index.html">
+        <button>Zurück zur Startseite</button>
+      </a>
+    </main>
+
+    <!-- Einheitlicher Footer -->
+    <footer class="site-footer">
+      <div w3-include-html="../templates/footer.html"></div>
+    </footer>
+  </div>
+
+  <!-- HTML-Includes laden, danach Navigation initialisieren -->
+  <script>
+    w3.includeHTML(function () {
+      initNavigation();
+    });
+  </script>
+</body>
 </html>

@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="./contact-page.js"></script>
-  <link rel="stylesheet" href="./contact_page.css">
-  <link rel="stylesheet" href="../style.css">
-  <link rel="preconnect" href="../fonts/fonts.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kontaktseite</title>
-  <link rel="icon" type="image/png" href="./img/favicon.png" sizes="32x32" />
 
+  <!-- Projekt-Styles: zuerst globale Styles, dann Seiten-spezifische -->
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./contact_page.css" />
+  <link rel="stylesheet" href="../fonts/fonts.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32" />
+
+  <!-- W3 Include + Navigation -->
   <script src="https://www.w3schools.com/lib/w3.js"></script>
-  <script src="./dom.js"></script>
+  <script src="../dom.js"></script>
 </head>
 
 <body>
-
   <div class="layout">
-
+    <!-- Einheitlicher Header (wird per w3.js injected) -->
     <header class="site-header">
       <div w3-include-html="../templates/header.html"></div>
     </header>
 
+    <!-- Seiteninhalt: zentriert, Breite wird über .page aus style.css gesteuert -->
     <main class="page flex-jc">
       <div class="contact_container">
         <h2>Kontaktiere uns</h2>
 
+        <!-- Formspree-Formular: wird in contact-page.js behandelt -->
         <form onsubmit="sendMail(event)">
-
           <label>
             Dein Name:
-            <input id="name" name="name" type="text" required>
+            <input id="name" name="name" type="text" required />
           </label>
 
           <label>
             Deine E-Mail:
-            <input id="email" name="email" type="email" required>
+            <input id="email" name="email" type="email" required />
           </label>
 
           <label>
@@ -47,23 +50,24 @@
           <div class="btn_container">
             <button id="submit_btn" type="submit">Abschicken</button>
           </div>
-
         </form>
       </div>
     </main>
 
+    <!-- Einheitlicher Footer -->
     <footer class="site-footer">
       <div w3-include-html="../templates/footer.html"></div>
     </footer>
-
   </div>
 
+  <!-- Seiten-spezifisches JS: Formular-Submit zu Formspree -->
+  <script src="./contact-page.js"></script>
+
+  <!-- W3-HTML-Includes laden und danach Navigation initialisieren -->
   <script>
     w3.includeHTML(function () {
       initNavigation();
     });
   </script>
-
 </body>
-
 </html>

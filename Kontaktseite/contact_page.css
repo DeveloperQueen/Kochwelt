@@ -1,47 +1,128 @@
-.contact_container {
-  background-color: rgb(220, 220, 220);
-  border-radius: 10px;
-  padding: 0px 10px 10px 10px;
-  width: 455px;
-  height: 570px;
-
-  box-sizing: border-box;
-
-}
-
-.flex-jc {
+/* Haupt-Layout der Kontaktseite: zentriert den Inhalt unter dem Header */
+.page.flex-jc {
   display: flex;
   justify-content: center;
-  margin-top: 60px !important;
+  padding: 60px 16px;
 }
 
-input {
-  height: 25px;
-  border-radius: 8px;
-  border-color: white;
+/* Karte / Box für das Formular */
+.contact_container {
+  background-color: #e0e0e0;
+  border-radius: 12px;
+  padding: 24px 24px 16px;
+  max-width: 480px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
-form label {
+/* Überschrift im Formular */
+.contact_container h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+
+/* Label + Inputs untereinander */
+.contact_container form label {
   display: flex;
   flex-direction: column;
-  padding-bottom: 20px;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 18px;
 }
 
-form label:first-of-type {
-  padding-top: 23px;
+/* erster Abstand oben */
+.contact_container form label:first-of-type {
+  margin-top: 8px;
 }
 
-form label:first-of-type {
-  padding-bottom: 20px;
-}
-
-form textarea {
-  resize: none;
-  height: 245px;
+/* Eingabefelder (Text + E-Mail) */
+.contact_container input,
+.contact_container textarea {
+  font: inherit;
   border-radius: 8px;
-  border-color: white;
+  border: 1px solid #ffffff;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  background-color: #ffffff;
 }
 
+/* Fokus-State – klare, aber dezente Hervorhebung */
+.contact_container input:focus,
+.contact_container textarea:focus {
+  outline: none;
+  border-color: #008000;
+  box-shadow: 0 0 0 2px rgba(0, 128, 0, 0.15);
+}
+
+/* Textarea-Größe + Verhalten */
+.contact_container textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+/* Button-Container */
 .btn_container {
   text-align: center;
+  margin-top: 8px;
+}
+
+/* Button erbt Grundstyles aus style.css, hier nur Feintuning */
+#submit_btn {
+  min-width: 140px;
+  transition: background-color 0.1s ease-in-out, transform 0.1s ease-in-out;
+}
+
+#submit_btn:hover {
+  background-color: rgba(0, 128, 0, 0.9);
+  transform: translateY(-1px);
+}
+
+/* Styling für send_mail.html */
+.thank-page {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.thank-page h1 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.thank-page p {
+  max-width: 480px;
+}
+
+
+/* ---------- Responsive Anpassungen ---------- */
+@media (max-width: 600px) {
+  .page.flex-jc {
+    padding: 40px 16px;
+  }
+
+  .contact_container {
+    padding: 20px 16px 14px;
+    border-radius: 10px;
+  }
+
+  .contact_container h2 {
+    font-size: 22px;
+  }
+
+  .contact_container form label {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .page.flex-jc {
+    padding: 32px 12px;
+  }
+
+  .contact_container {
+    padding: 16px 12px 12px;
+  }
 }
