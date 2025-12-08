@@ -264,7 +264,7 @@ button {
 }
 
 /* Media Query für den Menübutton und Responsive Website*/
-@media (max-width: 850px) {
+@media (max-width: 950px) {
 
     h1 {
         font-size: 24px;
@@ -321,6 +321,14 @@ button {
 
 /* Media Query für Resonsive Website */
 @media (max-width: 500px) {
+    h1 {
+        margin-top: 36px;
+    }
+
+    .quicklink h4 {
+        font-size: 20px;
+    }
+
     .footer-nav {
         gap: 6px;
         flex-direction: column;
@@ -332,5 +340,52 @@ button {
 
     button {
         padding: 0 15px;
+    }
+
+    .rdt-atf {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rdt-span {
+        font-size: 18px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+    }
+
+    .rdt-atf-pic {
+        height: 300px;
+        width: 300px;
+        margin: 0;
+        margin-top: 64px;
+    }
+
+    .rdt-button {
+        margin: 32px;
+        font-size: 18px;
+        padding: 16px 30px;
+    }
+
+    .sec-overline {
+        margin: 16px;
+        padding: 0;
+    }
+
+    .section-links {
+        padding-bottom: 40px;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .rdt-below {
+        font-size: 18px;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        text-align: center;
     }
 }
