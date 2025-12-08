@@ -1,3 +1,7 @@
+/* =========================================
+   Base Styles
+   ========================================= */
+
 html,
 body {
     height: 100%;
@@ -17,11 +21,16 @@ h1 {
     font-weight: 600;
 }
 
+/* Layout-Wrapper: Header + Main + Footer */
 .layout {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
+
+/* =========================================
+   Header & Navigation
+   ========================================= */
 
 .site-header {
     position: sticky;
@@ -39,7 +48,6 @@ h1 {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    padding: 0 24px;
     padding-left: 5%;
     padding-right: 5%;
 }
@@ -49,6 +57,7 @@ h1 {
     padding-bottom: 10px;
 }
 
+/* Burger-Button (Mobile) */
 .nav-toggle {
     display: none;
     background-color: #403B3B;
@@ -64,11 +73,12 @@ h1 {
     align-items: center;
 }
 
-
+/* Container für Header-Links */
 .header-nav {
     display: block;
 }
 
+/* Standard-Buttons */
 button {
     background-color: #008000;
     color: white;
@@ -78,6 +88,7 @@ button {
     cursor: pointer;
 }
 
+/* Breite Begrenzung für Inhaltsbereiche */
 .page {
     flex: 1;
     width: 90%;
@@ -85,6 +96,7 @@ button {
     max-width: 1920px;
 }
 
+/* Navigation Links */
 .quicklinks {
     list-style-type: none;
     display: flex;
@@ -95,11 +107,6 @@ button {
     margin-left: 24px;
 }
 
-.quicklinks a {
-    text-decoration: none;
-    color: black;
-}
-
 .quicklinks a:hover {
     text-decoration: underline solid 20%;
     color: green;
@@ -107,12 +114,13 @@ button {
     text-underline-offset: 8px;
 }
 
-/* Rezept des Tagesstart */
+/* =========================================
+   Startseite – Rezept des Tages
+   ========================================= */
 
 .rdt-atf {
     display: flex;
     justify-content: center;
-
 }
 
 .rdt-atf-pic {
@@ -122,8 +130,7 @@ button {
     border-radius: 20px;
     margin-right: 40px;
     margin-top: 60px;
-    box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.3);
-
+    box-shadow: 0 0 20px 4px rgba(0, 0, 0, 0.3);
 }
 
 .rdt-span {
@@ -142,16 +149,16 @@ button {
     color: white;
     border: none;
     margin-top: 56px;
-
 }
-
 
 .rdt-button:hover {
     cursor: pointer;
     background-color: rgba(0, 125, 0, 0.8);
 }
 
-/*Section mit den Rezeptlinks auf der Startseite*/
+/* =========================================
+   Startseite – Rezept-Teaser Sektion
+   ========================================= */
 
 .sec-con {
     background-color: rgba(0, 0, 0, 0.08);
@@ -164,14 +171,12 @@ button {
     padding-bottom: 25px;
     display: flex;
     justify-content: center;
-
 }
 
 .section-links {
     display: flex;
     justify-content: space-around;
     padding-bottom: 160px;
-
 }
 
 .quicklink:hover {
@@ -183,7 +188,6 @@ button {
     width: 300px;
     border-radius: 20px;
     object-fit: cover;
-
 }
 
 .quicklink h4 {
@@ -192,7 +196,9 @@ button {
     font-size: 24px;
 }
 
-/*Infobox*/
+/* =========================================
+   Startseite – Info-Sektion Pommes
+   ========================================= */
 
 .overscrpt-below {
     text-align: center;
@@ -202,11 +208,7 @@ button {
     display: flex;
     justify-content: space-evenly;
     font-size: 24px;
-}
-
-.rdt-below-span {
-    display: flex;
-    align-items: center;
+    gap: 20px;
 }
 
 .rdt-pic-below {
@@ -215,7 +217,9 @@ button {
     border-radius: 20px;
 }
 
-/* Footer */
+/* =========================================
+   Footer
+   ========================================= */
 
 .site-footer {
     width: 100%;
@@ -228,8 +232,6 @@ button {
 .footer-inner {
     max-width: 1920px;
     margin: 0 auto;
-    padding: 0px 24px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -239,7 +241,6 @@ button {
 
 .footer-inner div img {
     height: 45px;
-    opacity: 0.9;
     display: flex;
     align-items: center;
     filter: brightness(0) invert(1);
@@ -263,7 +264,12 @@ button {
     opacity: 1;
 }
 
-/* Media Query für den Menübutton und Responsive Website*/
+/* =========================================
+   Media Query: <= 950px
+   - Navigation (Burger)
+   - Startseite responsive
+   ========================================= */
+
 @media (max-width: 950px) {
 
     h1 {
@@ -308,6 +314,7 @@ button {
         pointer-events: auto;
     }
 
+    /* Header-Navigation vertikal */
     .quicklinks {
         flex-direction: column;
         padding: 8px 5%;
@@ -317,43 +324,18 @@ button {
     .quicklinks li {
         margin: 8px 0;
     }
-}
 
-/* Media Query für Resonsive Website */
-@media (max-width: 500px) {
-    h1 {
-        margin-top: 36px;
-    }
-
-    .quicklink h4 {
-        font-size: 20px;
-    }
-
-    .footer-nav {
-        gap: 6px;
-        flex-direction: column;
-    }
-
-    .footer_links {
-        font-size: 16px;
-    }
-
-    button {
-        padding: 0 15px;
-    }
-
+    /* Rezept des Tages kompakter */
     .rdt-atf {
-        flex-direction: column;
         align-items: center;
     }
 
     .rdt-span {
         font-size: 18px;
         text-align: center;
-        display: flex;
-        flex-direction: column;
         align-items: center;
         margin: 0;
+        padding-left: 8px;
     }
 
     .rdt-atf-pic {
@@ -387,5 +369,47 @@ button {
         align-items: center;
         gap: 40px;
         text-align: center;
+    }
+}
+
+/* =========================================
+   Media Query: <= 700px
+   - Rezept des Tages untereinander
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .rdt-atf {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* =========================================
+   Media Query: <= 500px
+   - Feinjustierung Typografie & Footer
+   ========================================= */
+
+@media (max-width: 500px) {
+
+    h1 {
+        margin-top: 36px;
+    }
+
+    .quicklink h4 {
+        font-size: 20px;
+    }
+
+    .footer-nav {
+        gap: 6px;
+        flex-direction: column;
+    }
+
+    .footer_links {
+        font-size: 16px;
+    }
+
+    button {
+        padding: 0 15px;
     }
 }

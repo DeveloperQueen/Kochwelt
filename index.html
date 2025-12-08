@@ -5,25 +5,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kochwelt</title>
+
+    <!-- Basis-Styles -->
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="./fonts/fonts.css">
+    <link rel="stylesheet" href="./fonts/fonts.css" />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="./img/favicon.png" sizes="32x32" />
 
+    <!-- W3 include + Navigation-Logik -->
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     <script src="./dom.js"></script>
 </head>
 
 <body>
     <div class="layout">
+        <!-- Sticky Header mit inkludierter Navigation -->
         <header class="site-header">
             <div w3-include-html="../templates/header.html"></div>
         </header>
 
         <main>
+            <!-- Rezept des Tages (Above the Fold) -->
             <div class="rdt-atf page">
-                <img class="rdt-atf-pic" src="./img/tiramisu.jpg" alt="" />
+                <img class="rdt-atf-pic" src="./img/tiramisu.jpg" alt="Tiramisu" />
 
-                <span class="rdt-span">
+                <!-- geändert: span -> div für saubere Semantik -->
+                <div class="rdt-span">
                     <h1>Köstliches Tiramisu</h1>
 
                     Das italienische Dessert Tiramisu erfreut sich überall großer
@@ -33,10 +41,13 @@
                     Sie <br />
                     als Rezept des Tages ausgewählt.
 
-                    <a href="./jenny/tiramisu_rezept.html"><button class="rdt-button">Rezept öffnen</button></a>
-                </span>
+                    <a href="./jenny/tiramisu_rezept.html">
+                        <button class="rdt-button">Rezept öffnen</button>
+                    </a>
+                </div>
             </div>
 
+            <!-- Rezept-Teaser Sektion -->
             <div class="sec-con">
                 <div class="sec-overline">
                     <h1>Lust auf was Neues?</h1>
@@ -45,7 +56,7 @@
                 <div class="section-links">
                     <a href="./lisa/lisas_rezept.html">
                         <div class="quicklink">
-                            <img src="./img/cheese-noodles-609776_1280.jpg" alt="Käsespätzle" />
+                            <img src="./img/cheese-noodles-609776_1280.jpg" alt="Käsespätzle mit Röstzwiebeln" />
                             <h4>
                                 Käsespätzle mit <br />
                                 Röstzwiebeln
@@ -75,6 +86,7 @@
                 </div>
             </div>
 
+            <!-- Info-Sektion Pommes -->
             <div class="overscrpt-below">
                 <h1>Pommes - lecker aber ungesund?</h1>
             </div>
@@ -90,10 +102,13 @@
             </div>
         </main>
 
+        <!-- Footer mit Links -->
         <footer class="site-footer">
             <div w3-include-html="../templates/footer.html"></div>
         </footer>
     </div>
+
+    <!-- W3 include starten + Navigation initialisieren -->
     <script>
         w3.includeHTML(initNavigation);
     </script>
