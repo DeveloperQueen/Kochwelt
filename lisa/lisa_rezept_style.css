@@ -22,9 +22,9 @@ h3 {
 }
 
 .content {
-  max-width: 1440px;
+  max-width: 1920px;
   margin: 0 auto;
-  padding: 0 120px;
+  padding: 0 05%;
   box-sizing: border-box;
 }
 
@@ -168,7 +168,7 @@ main {
     padding-right: 0;
     white-space: nowrap; 
     border-radius: 10px 0 0 10px;
-    padding-left: 38üx;
+    padding-left: 38px;
 }
 
 
@@ -201,9 +201,9 @@ main {
 }
 
 .recipe_author img {
-  height: 100px;
-  width: 100px;
-  border-radius: 100%;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
 }
 
 .profile_name {
