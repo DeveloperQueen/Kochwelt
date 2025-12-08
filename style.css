@@ -78,9 +78,9 @@ button {
 }
 
 .page {
-    /*flex: 1;
+    flex: 1;
     width: 90%;
-    margin: 0 auto;*/
+    margin: 0 auto;
     max-width: 1920px;
 }
 
