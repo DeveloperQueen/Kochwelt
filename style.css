@@ -191,8 +191,13 @@ button:hover {
     padding-bottom: 160px;
 }
 
+.quicklink {
+    transition: transform 0.12s ease-in-out;
+}
+
 .quicklink:hover {
     cursor: pointer;
+    transform: translateY(-3px);
 }
 
 .quicklink img {
@@ -200,6 +205,11 @@ button:hover {
     width: 300px;
     border-radius: 20px;
     object-fit: cover;
+    transition: transform 0.12s ease-in-out;
+}
+
+.quicklink:hover img {
+    transform: scale(1.02);
 }
 
 .quicklink h4 {
