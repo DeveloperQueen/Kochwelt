@@ -1,14 +1,5 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Königsberger Klopse</title>
-    <link rel="stylesheet" href="jenny_rezept_style.css" />
-    <link rel="stylesheet" href="../style.css" />
-    <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32" />
-    <script src="https://www.w3schools.com/lib/w3.js"></script>
-  </head>
 
 <head>
   <meta charset="UTF-8" />
@@ -21,217 +12,209 @@
   <script src="../dom.js"></script>
 </head>
 
-      <main class="page">
-        <h1>Königsberger Klopse</h1>
+<div class="layout">
 
-        <img class="recipe-atf" src="../img/Königsberger Klopse.png" alt="" />
+  <header class="site-header">
+    <div w3-include-html="../templates/header.html"></div>
+  </header>
 
-        <div class="recipe-info">
-          <div class="recipe-info-down">
-            <img class="recipes-icon" src="../img/icons/clock-regular.svg" />
-            <div>15 Min.</div>
-          </div>
+  <main class="page">
+    <h1>Königsberger Klopse</h1>
 
-          <div class="recipe-info-down">
-            <img class="recipes-icon" src="../img/icons/brain-solid.svg" />
-            <div>simpel</div>
-          </div>
-          <div class="recipe-info-down">
-            <img
-              class="recipes-icon"
-              src="../img/icons/calendar-alt-regular.svg"
-            />
-            <div>15.08.2023</div>
-          </div>
-        </div>
+    <img class="recipe-atf" src="../img/Königsberger Klopse.png" alt="" />
 
-        <div class="border-line"></div>
+    <div class="recipe-info">
+      <div class="recipe-info-down">
+        <img class="recipes-icon" src="../img/icons/clock-regular.svg" />
+        <div>15 Min.</div>
+      </div>
 
-        <div class="calc-con">
-          <span>Zutaten für</span>
-          <input
-            class="calc-input"
-            id="portion"
-            type="number"
-            value="1"
-            min="1"
-          />
-
-          <button class="button" id="button" onclick="calculatePortions()">
-            Portionen
-          </button>
-        </div>
-
-        <table class="ingredients margin-recipe">
-          <tbody id="ingredientsTable">
-            <tr class="grey-deposit">
-              <td class="amount" data-base="1">1</td>
-              <td>Stk.</td>
-              <td>Brötchen</td>
-            </tr>
-
-            <tr class="">
-              <td class="amount" data-base="1">1</td>
-              <td>Stk.</td>
-              <td>Zwiebel</td>
-            </tr>
-
-            <tr class="grey-deposit">
-              <td class="amount" data-base="500">500</td>
-              <td>gr.</td>
-              <td>Hackfleisch gemischt</td>
-            </tr>
-
-            <tr class="">
-              <td class="amount" data-base="1">1</td>
-              <td>Stk.</td>
-              <td>Ei (Größe M)</td>
-            </tr>
-
-            <tr class="grey-deposit">
-              <td class="amount" data-base="1">1</td>
-              <td>TL</td>
-              <td>Senf</td>
-            </tr>
-
-            <tr class="">
-              <td class="amount" data-base="1">1</td>
-              <td>TL</td>
-              <td>Majoran (getrocknet)</td>
-            </tr>
-
-            <tr class="grey-deposit">
-              <td class="amount" data-base="500">500</td>
-              <td>ml</td>
-              <td>Fleischbrühe</td>
-            </tr>
-
-            <tr class="">
-              <td class="amount" data-base="2">2</td>
-              <td>Stk.</td>
-              <td>Essiggurken</td>
-            </tr>
-
-            <tr class="grey-deposit">
-              <td class="amount" data-base="1">1</td>
-              <td>EL</td>
-              <td>Butter</td>
-            </tr>
-
-            <tr class="">
-              <td class="amount" data-base="1">1</td>
-              <td>EL</td>
-              <td>Mehl</td>
-            </tr>
-
-            <tr class="grey-deposit">
-              <td class="amount" data-base="2">2</td>
-              <td>EL</td>
-              <td>Kapern</td>
-            </tr>
-
-            <tr class="">
-              <td class="amount" data-base="1">1</td>
-              <td>TL</td>
-              <td>Zucker</td>
-            </tr>
-
-            <tr class="grey-deposit">
-              <td class="amount" data-base="1">1</td>
-              <td>EL</td>
-              <td>Weißweinessig</td>
-            </tr>
-
-            <tr class="">
-              <td></td>
-              <td></td>
-              <td>Salz & Pfeffer</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h2>Zubereitung</h2>
-
-        <div class="recipe-info">
-          <div class="recipe-info-down">
-            <img class="recipes-icon" src="../img/icons/clock-regular.svg" />
-            <div>ca. 15 Minuten</div>
-          </div>
-          <div class="recipe-info-down">
-            <img class="recipes-icon" src="../img/icons/clock-regular.svg" />
-            <div>Gesamtzeit ca. 15 Minuten</div>
-          </div>
-        </div>
-        <div class="recipe-text">
-          <span>
-            Das altbackene Brötchen 5 Minuten in Wasser einweichen, dann
-            herausnehmen und leicht ausdrücken. Die Zwiebel schälen und fein
-            hacken. 500 g Hackfleisch (Schwein und Kalb gemischt) 1 Ei (Größe M)
-            1 TL Senf 1 TL Majoran (getrocknet) Salz Pfeffer Das Hackfleisch mit
-            dem eingeweichten Brötchen, Zwiebel, Ei, Senf, Majoran, 1 TL Salz
-            und ½ TL Pfeffer in eine große Schüssel geben. Mit den Händen zu
-            einem homogenen Teig vermengen. Aus der Fleischmasse etwa
-            tischtennisballgroße Bällchen formen. 500 ml Fleischbrühe In einem
-            großen Topf die Fleischbrühe erhitzen und die Klopse in das leicht
-            köchelnde Wasser geben. 20–25 Minuten darin garen. Sollte sich
-            Schaum bilden, diesen abschöpfen. 2 Essiggurken 1 EL Butter 1 EL
-            Mehl Kurz bevor die Klopse gar sind, die Essiggurken für die Sauce
-            klein würfeln. In einer kleinen Pfanne die Butter schmelzen und das
-            Mehl darin bei niedriger bis mittlerer Hitze 1–2 Minuten leicht
-            goldbraun anrösten. 200 ml von der Klopse-Kochflüssigkeit abschöpfen
-            und zur Mehlschwitze in die Pfanne geben. Gut umrühren, damit sich
-            keine Klümpchen bilden. Kurz köcheln lassen, bis die Sauce eindickt.
-            2 EL Kapern 1 EL Weißweinessig 1 TL Zucker Salz Pfeffer
-            Essiggurkenwürfel, Kapern, Weißweinessig und Zucker einrühren und
-            eventuell mit Salz und Pfeffer abschmecken. Die Klopse vorsichtig
-            aus der Brühe heben, in die Sauce geben und 5–10 Minuten darin
-            ziehen lassen. Die Königsberger Klopse mit der Sauce servieren. Dazu
-            passen Salzkartoffeln oder Reis.
-          </span>
-        </div>
-
-        <h3>Rezept erstellt von</h3>
-
-        <div class="recipe-author">
-          <img class="userpic" src="../img/jenny_pic.jpg" alt="" />
-          <div>Jenny</div>
-        </div>
-      </main>
-
-      <footer class="site-footer">
-        <div w3-include-html="../templates/footer.html"></div>
-      </footer>
+      <div class="recipe-info-down">
+        <img class="recipes-icon" src="../img/icons/brain-solid.svg" />
+        <div>simpel</div>
+      </div>
+      <div class="recipe-info-down">
+        <img class="recipes-icon" src="../img/icons/calendar-alt-regular.svg" />
+        <div>15.08.2023</div>
+      </div>
     </div>
-    <script>
-      function calculatePortions() {
-        let input = document.getElementById("portion");
 
-        let portions = Number(input.value);
+    <div class="border-line"></div>
 
-        if (isNaN(portions) || portions < 1) {
-          portions = 1;
-          input.value = 1;
-        }
+    <div class="calc-con">
+      <span>Zutaten für</span>
+      <input class="calc-input" id="portion" type="number" value="1" min="1" />
 
-        let amounts = document.querySelectorAll(".amount");
+      <button class="button" id="button" onclick="calculatePortions()">
+        Portionen
+      </button>
+    </div>
 
-        amounts.forEach((amount) => {
-          let base = Number(amount.getAttribute("data-base"));
-          amount.textContent = base * portions;
-        });
-      }
+    <table class="ingredients margin-recipe">
+      <tbody id="ingredientsTable">
+        <tr class="grey-deposit">
+          <td class="amount" data-base="1">1</td>
+          <td>Stk.</td>
+          <td>Brötchen</td>
+        </tr>
 
-      let amounts = document.querySelectorAll('.amount');
+        <tr class="">
+          <td class="amount" data-base="1">1</td>
+          <td>Stk.</td>
+          <td>Zwiebel</td>
+        </tr>
 
-      amounts.forEach(amount => {
-        let base = Number(amount.getAttribute('data-base'));
-        amount.textContent = base * portions;
-      });
+        <tr class="grey-deposit">
+          <td class="amount" data-base="500">500</td>
+          <td>gr.</td>
+          <td>Hackfleisch gemischt</td>
+        </tr>
 
-    w3.includeHTML(function () {
-      initNavigation();
+        <tr class="">
+          <td class="amount" data-base="1">1</td>
+          <td>Stk.</td>
+          <td>Ei (Größe M)</td>
+        </tr>
+
+        <tr class="grey-deposit">
+          <td class="amount" data-base="1">1</td>
+          <td>TL</td>
+          <td>Senf</td>
+        </tr>
+
+        <tr class="">
+          <td class="amount" data-base="1">1</td>
+          <td>TL</td>
+          <td>Majoran (getrocknet)</td>
+        </tr>
+
+        <tr class="grey-deposit">
+          <td class="amount" data-base="500">500</td>
+          <td>ml</td>
+          <td>Fleischbrühe</td>
+        </tr>
+
+        <tr class="">
+          <td class="amount" data-base="2">2</td>
+          <td>Stk.</td>
+          <td>Essiggurken</td>
+        </tr>
+
+        <tr class="grey-deposit">
+          <td class="amount" data-base="1">1</td>
+          <td>EL</td>
+          <td>Butter</td>
+        </tr>
+
+        <tr class="">
+          <td class="amount" data-base="1">1</td>
+          <td>EL</td>
+          <td>Mehl</td>
+        </tr>
+
+        <tr class="grey-deposit">
+          <td class="amount" data-base="2">2</td>
+          <td>EL</td>
+          <td>Kapern</td>
+        </tr>
+
+        <tr class="">
+          <td class="amount" data-base="1">1</td>
+          <td>TL</td>
+          <td>Zucker</td>
+        </tr>
+
+        <tr class="grey-deposit">
+          <td class="amount" data-base="1">1</td>
+          <td>EL</td>
+          <td>Weißweinessig</td>
+        </tr>
+
+        <tr class="">
+          <td></td>
+          <td></td>
+          <td>Salz & Pfeffer</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Zubereitung</h2>
+
+    <div class="recipe-info">
+      <div class="recipe-info-down">
+        <img class="recipes-icon" src="../img/icons/clock-regular.svg" />
+        <div>ca. 15 Minuten</div>
+      </div>
+      <div class="recipe-info-down">
+        <img class="recipes-icon" src="../img/icons/clock-regular.svg" />
+        <div>Gesamtzeit ca. 15 Minuten</div>
+      </div>
+    </div>
+    <div class="recipe-text">
+      <span>
+        Das altbackene Brötchen 5 Minuten in Wasser einweichen, dann
+        herausnehmen und leicht ausdrücken. Die Zwiebel schälen und fein
+        hacken. 500 g Hackfleisch (Schwein und Kalb gemischt) 1 Ei (Größe M)
+        1 TL Senf 1 TL Majoran (getrocknet) Salz Pfeffer Das Hackfleisch mit
+        dem eingeweichten Brötchen, Zwiebel, Ei, Senf, Majoran, 1 TL Salz
+        und ½ TL Pfeffer in eine große Schüssel geben. Mit den Händen zu
+        einem homogenen Teig vermengen. Aus der Fleischmasse etwa
+        tischtennisballgroße Bällchen formen. 500 ml Fleischbrühe In einem
+        großen Topf die Fleischbrühe erhitzen und die Klopse in das leicht
+        köchelnde Wasser geben. 20–25 Minuten darin garen. Sollte sich
+        Schaum bilden, diesen abschöpfen. 2 Essiggurken 1 EL Butter 1 EL
+        Mehl Kurz bevor die Klopse gar sind, die Essiggurken für die Sauce
+        klein würfeln. In einer kleinen Pfanne die Butter schmelzen und das
+        Mehl darin bei niedriger bis mittlerer Hitze 1–2 Minuten leicht
+        goldbraun anrösten. 200 ml von der Klopse-Kochflüssigkeit abschöpfen
+        und zur Mehlschwitze in die Pfanne geben. Gut umrühren, damit sich
+        keine Klümpchen bilden. Kurz köcheln lassen, bis die Sauce eindickt.
+        2 EL Kapern 1 EL Weißweinessig 1 TL Zucker Salz Pfeffer
+        Essiggurkenwürfel, Kapern, Weißweinessig und Zucker einrühren und
+        eventuell mit Salz und Pfeffer abschmecken. Die Klopse vorsichtig
+        aus der Brühe heben, in die Sauce geben und 5–10 Minuten darin
+        ziehen lassen. Die Königsberger Klopse mit der Sauce servieren. Dazu
+        passen Salzkartoffeln oder Reis.
+      </span>
+    </div>
+
+    <h3>Rezept erstellt von</h3>
+
+    <div class="recipe-author">
+      <img class="userpic" src="../img/jenny_pic.jpg" alt="" />
+      <div>Jenny</div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div w3-include-html="../templates/footer.html"></div>
+  </footer>
+
+</div>
+
+<script>
+  function calculatePortions() {
+    let input = document.getElementById("portion");
+
+    let portions = Number(input.value);
+
+    if (isNaN(portions) || portions < 1) {
+      portions = 1;
+      input.value = 1;
+    }
+
+    let amounts = document.querySelectorAll(".amount");
+
+    amounts.forEach((amount) => {
+      let base = Number(amount.getAttribute("data-base"));
+      amount.textContent = base * portions;
     });
-  </script>
+  }
+
+  w3.includeHTML(function () {
+    initNavigation();
+  });
+</script>
 </body>
 
 </html>

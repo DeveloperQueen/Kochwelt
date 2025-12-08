@@ -11,10 +11,13 @@
   <script src="https://www.w3schools.com/lib/w3.js"></script>
   <script src="../dom.js"></script>
 </head>
+
 <div class="layout">
+
   <header class="site-header">
     <div w3-include-html="../templates/header.html"></div>
   </header>
+
   <main class="page">
     <h1>Tiramisu</h1>
 
@@ -153,7 +156,9 @@
   <footer class="site-footer">
     <div w3-include-html="../templates/footer.html"></div>
   </footer>
+
 </div>
+
 <script>
   function calculatePortions() {
     let input = document.getElementById("portion");
@@ -172,13 +177,6 @@
       amount.textContent = base * portions;
     });
   }
-
-  let amounts = document.querySelectorAll('.amount');
-
-  amounts.forEach(amount => {
-    let base = Number(amount.getAttribute('data-base'));
-    amount.textContent = base * portions;
-  });
 
   w3.includeHTML(function () {
     initNavigation();
