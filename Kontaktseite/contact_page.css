@@ -1,72 +1,47 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Raleway", sans-serif;
-  scroll-behavior: smooth;
-  align-items: center;
-display: flex;
-flex-direction: column;
+.contact_container {
+  background-color: rgb(220, 220, 220);
+  border-radius: 10px;
+  padding: 0px 10px 10px 10px;
+  width: 455px;
+  height: 570px;
+
+  box-sizing: border-box;
+
 }
 
-
-.contact_container {
-background-color: rgb(220, 220, 220);
-border-radius: 10px;
-padding: 0px 10px 10px 10px;
- width: 455px;
-    height: 570px;
-    
-    box-sizing: border-box;  
-
+.flex-jc {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px !important;
 }
 
 input {
-    height: 25px;
+  height: 25px;
+  border-radius: 8px;
+  border-color: white;
 }
 
 form label {
-    display: flex;          
-    flex-direction: column; 
-    padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
 }
 
 form label:first-of-type {
-   padding-top: 23px;
+  padding-top: 23px;
 }
 
 form label:first-of-type {
-    padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 form textarea {
-    resize: none;
-    height: 245px;
-}
-
-
-
-a {
-  display: inline-block;
-  margin-top: 20px;
-  text-decoration: none;
-  color: #fff;
-  background-color: #4caf50;
-  padding: 10px 20px;
-  border-radius: 5px;
-}
-a:hover {
-background-color: rgba(0, 125, 0, 0.8);
-}
-
-#submit_btn {
-  background-color: green;
-  color: white;
-  border: none;
-  padding: 10px 30px;
-  cursor: pointer;
-  
+  resize: none;
+  height: 245px;
+  border-radius: 8px;
+  border-color: white;
 }
 
 .btn_container {
-text-align: center;
+  text-align: center;
 }
