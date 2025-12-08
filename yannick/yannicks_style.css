@@ -1,9 +1,17 @@
+/* =========================================
+   Hero-Bereich (Bild + Titel)
+   ========================================= */
+
 .container img {
     height: 220px;
     width: 100%;
     object-fit: cover;
     border-radius: 16px;
 }
+
+/* =========================================
+   Info-Chips: Zeit / Schwierigkeit / Datum
+   ========================================= */
 
 .cooking_bar {
     display: flex;
@@ -29,11 +37,16 @@
     display: block;
 }
 
+/* dünne Linie zwischen Info-Chips und Zutaten */
 .second_line {
     height: 1px;
     width: 100%;
-    box-shadow: 0px 1px 1px rgba(123, 123, 130, 0.2);
+    box-shadow: 0 1px 1px rgba(123, 123, 130, 0.2);
 }
+
+/* =========================================
+   Zutaten + Portionsrechner
+   ========================================= */
 
 .ingrediants {
     margin-top: 16px;
@@ -62,6 +75,8 @@
     outline: none;
 }
 
+/* Zutaten-Tabelle */
+
 .ingredients_table table {
     width: 100%;
     border-collapse: separate;
@@ -86,6 +101,7 @@
     border-radius: 0 12px 12px 0;
 }
 
+/* abwechselnde Hintergrundfarben für Zeilen */
 .ingredients_table tr:nth-child(odd) td {
     background-color: #f2f2f2;
 }
@@ -93,6 +109,10 @@
 .ingredients_table tr:nth-child(even) td {
     background-color: #ffffff;
 }
+
+/* =========================================
+   Zubereitung
+   ========================================= */
 
 .preparation {
     margin-top: 32px;
@@ -111,6 +131,7 @@
     line-height: 1.6;
 }
 
+/* eigene Nummerierungskreise links neben jedem Schritt */
 .preparation_steps li::before {
     content: counter(step);
     position: absolute;
@@ -127,10 +148,14 @@
     font-weight: 600;
 }
 
+/* =========================================
+   Author-Bereich
+   ========================================= */
+
 .author div img {
     height: 100px;
-    border-radius: 50%;
     width: 100px;
+    border-radius: 50%;
 }
 
 .author div {
@@ -140,8 +165,12 @@
     font-size: 24px;
 }
 
-/* Media Query für Resonsive Website */
+/* =========================================
+   Media Query für Responsive Layout
+   ========================================= */
+
 @media (max-width: 500px) {
+
     .cooking_bar {
         flex-direction: column;
         gap: 12px;
@@ -164,10 +193,10 @@
     }
 
     .calculator_bar {
-        gap: 1;
+        gap: 8px;
     }
 
     .portion_box input {
-    width: 60px;
-}
+        width: 60px;
+    }
 }

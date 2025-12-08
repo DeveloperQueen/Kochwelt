@@ -6,46 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rinderroulade mit Rotkohl & Kartoffelklößen</title>
 
-    <link rel="stylesheet" href="./yannicks_style.css">
+    <!-- Globale Styles (Layout, Header, Footer, Basis-Typo) -->
     <link rel="stylesheet" href="../style.css">
-    <link rel="preconnect" href="../fonts/fonts.css">
+    <link rel="stylesheet" href="../fonts/fonts.css">
+
+    <!-- Seiten-spezifische Styles für dieses Rezept -->
+    <link rel="stylesheet" href="./yannicks_style.css">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32">
 
-
+    <!-- HTML-Includes & Navigation -->
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     <script src="../dom.js"></script>
-
 </head>
 
 <body>
     <div class="layout">
 
+        <!-- Sticky-Header wird über templates/header.html geladen -->
         <header class="site-header">
             <div w3-include-html="../templates/header.html"></div>
         </header>
 
+        <!-- Hauptinhalt der Rezeptseite -->
         <main class="page">
+
+            <!-- Hero-Bereich: Titel + großes Bild -->
             <section class="container">
                 <h1>Rinderroulade mit Rotkohl & Kartoffelklößen</h1>
-                <img src="../img/food.jpg" alt="Bild von Rinderroulade mit Rotkohl & Kartoffelklößen">
+                <img src="../img/food.jpg" alt="Rinderroulade mit Rotkohl & Kartoffelklößen">
             </section>
+
+            <!-- Zeit / Schwierigkeit / Datum -->
             <div class="cooking_bar">
                 <div class="cooking_label">
-                    <img src="../img/icons/clock-regular.svg">
+                    <img src="../img/icons/clock-regular.svg" alt="Zubereitungszeit">
                     <div>30 Min.</div>
                 </div>
                 <div class="cooking_label">
-                    <img src="../img/icons/brain-solid.svg">
+                    <img src="../img/icons/brain-solid.svg" alt="Schwierigkeitsgrad">
                     <div>normal</div>
                 </div>
                 <div class="cooking_label">
-                    <img src="../img/icons/calendar-alt-regular.svg">
+                    <img src="../img/icons/calendar-alt-regular.svg" alt="Datum">
                     <div>04.12.2025</div>
                 </div>
             </div>
 
             <div class="second_line"></div>
 
+            <!-- Zutaten + Portionsrechner -->
             <section class="ingrediants">
                 <div class="calculator_bar">
                     <span>Zutaten für</span>
@@ -57,6 +68,7 @@
                 </div>
             </section>
 
+            <!-- Zutaten-Tabelle -->
             <section class="ingredients_table">
                 <table>
                     <tbody>
@@ -96,16 +108,17 @@
                 </table>
             </section>
 
+            <!-- Zubereitungsschritte -->
             <section class="preparation">
                 <h2>Zubereitung</h2>
 
                 <div class="cooking_bar">
                     <div class="cooking_label">
-                        <img src="../img/icons/clock-regular.svg" alt="">
+                        <img src="../img/icons/clock-regular.svg" alt="Arbeitszeit">
                         <div>ca. 30 Min.</div>
                     </div>
                     <div class="cooking_label">
-                        <img src="../img/icons/clock-regular.svg" alt="">
+                        <img src="../img/icons/clock-regular.svg" alt="Gesamtzeit">
                         <div>Gesamtzeit ca. 30 Min.</div>
                     </div>
                 </div>
@@ -127,42 +140,56 @@
                 </ol>
             </section>
 
+            <!-- Autor-Bereich -->
             <section class="author">
                 <h2>Rezept erstellt von</h2>
                 <div>
-                    <img src="../img//yannick_profil.jpg">
+                    <img src="../img/yannick_profil.jpg" alt="Profilbild von Yannick">
                     Yannick
                 </div>
             </section>
 
         </main>
 
+        <!-- Footer wird über templates/footer.html geladen -->
         <footer class="site-footer">
             <div w3-include-html="../templates/footer.html"></div>
         </footer>
     </div>
+
+    <!-- Seiten-spezifisches Skript: Portionsrechner + HTML-Includes -->
     <script>
         function calculatePortions() {
+            const input = document.getElementById('portionInput');
+            let portions = parseInt(input.value, 10);
 
-            let input = document.getElementById('portionInput');
-
-            let portions = Number(input.value);
-
+            // Ungültige oder zu kleine Eingaben auf 1 korrigieren
             if (isNaN(portions) || portions < 1) {
                 portions = 1;
-                input.value = 1;
+                input.value = '1';
             }
 
-            let amounts = document.querySelectorAll('.amount');
+            const amounts = document.querySelectorAll('.amount');
 
-            amounts.forEach(amount => {
-                let base = Number(amount.getAttribute('data-base'));
+            amounts.forEach((amount) => {
+                const baseAttr = amount.getAttribute('data-base');
+
+                // Kein Basiswert hinterlegt -> Zeile unverändert lassen
+                if (!baseAttr) {
+                    return;
+                }
+
+                const base = Number(baseAttr);
+                if (isNaN(base)) {
+                    return;
+                }
+
                 amount.textContent = base * portions;
             });
         }
-        w3.includeHTML(function () {
-            initNavigation();
-        });
+
+        // HTML-Templates laden und danach Navigation initialisieren
+        w3.includeHTML(initNavigation);
     </script>
 </body>
 
