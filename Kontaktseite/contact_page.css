@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   padding: 60px 16px;
+  align-items: center;
 }
 
 /* Box für das Formular */
@@ -14,6 +15,7 @@
   width: 100%;
   box-sizing: border-box;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  height: 525px;
 }
 
 .contact_container h2 {

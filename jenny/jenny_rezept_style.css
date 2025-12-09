@@ -27,7 +27,7 @@ h2 {
 }
 
 .recipe-info-down {
-    background-color: rgb(239,239,239);
+    background-color: rgb(239, 239, 239);
     margin: 0 24px 40px 0;
     display: flex;
     align-items: center;
@@ -43,7 +43,7 @@ h2 {
 }
 
 .border-line {
-    border-bottom: 2px solid rgb(239,239,239);
+    border-bottom: 2px solid rgb(239, 239, 239);
     margin-top: 40px;
 }
 
@@ -53,7 +53,8 @@ h2 {
     border-spacing: 0;
 }
 
-td:first-child , td:nth-child(2) {
+td:first-child,
+td:nth-child(2) {
     width: 80px;
 }
 
@@ -67,19 +68,21 @@ td:first-child , td:nth-child(2) {
 }
 
 .grey-deposit {
-    background-color: rgb(239,239,239);
+    background-color: rgb(239, 239, 239);
     border-radius: 20px;
 }
-.calc-con{
+
+.calc-con {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
     margin-top: 20px;
 }
+
 .calc-input {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    border-color: rgb(239,239,239);
+    border-color: rgb(239, 239, 239);
     width: 200px;
     height: 36px;
     margin-left: 20px;
@@ -96,9 +99,10 @@ td:first-child , td:nth-child(2) {
 
 .userpic {
     border-radius: 50%;
-    height: 64px;
-    width: 64px;
+    height: 100px;
+    width: 100px;
     margin-right: 20px;
+    object-fit: cover;
 }
 
 .recipe-author {
@@ -129,7 +133,7 @@ td:first-child , td:nth-child(2) {
         font-size: 16px;
     }
 
-    .button{
+    .button {
         padding: 12px 24px;
     }
 
@@ -137,7 +141,7 @@ td:first-child , td:nth-child(2) {
         width: 60px;
     }
 
-    .recipe-text{
+    .recipe-text {
         margin-top: 24px;
         margin-bottom: 80px;
     }
