@@ -58,7 +58,7 @@
                     <span>Zutaten für</span>
 
                     <div class="portion_box">
-                        <input id="portionInput" type="number" min="1" value="1">
+                        <input id="portionInput" type="number" min="1" max="10" value="1">
                         <button onclick="calculatePortions()">Portionen</button>
                     </div>
                 </div>
@@ -159,26 +159,24 @@
             const input = document.getElementById('portionInput');
             let portions = parseInt(input.value, 10);
 
-            // Ungültige oder zu kleine Eingaben auf 1 korrigieren
             if (isNaN(portions) || portions < 1) {
                 portions = 1;
                 input.value = '1';
+            }
+
+            if (portions > 10) {
+                portions = 10;
+                input.value = '10';
             }
 
             const amounts = document.querySelectorAll('.amount');
 
             amounts.forEach((amount) => {
                 const baseAttr = amount.getAttribute('data-base');
-
-                // Kein Basiswert hinterlegt -> Zeile unverändert lassen
-                if (!baseAttr) {
-                    return;
-                }
+                if (!baseAttr) return;
 
                 const base = Number(baseAttr);
-                if (isNaN(base)) {
-                    return;
-                }
+                if (isNaN(base)) return;
 
                 amount.textContent = base * portions;
             });

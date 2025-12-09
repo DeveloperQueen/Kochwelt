@@ -2,169 +2,192 @@
 <html lang="de">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Käsespätzle mit Röstzwiebeln</title>
+
+  <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="../fonts/fonts.css">
-  <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="../lisa/lisa_rezept_style.css" />
-  <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32" />
+
+  <link rel="stylesheet" href="./lisa_rezept_style.css">
+
+  <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32">
+
+  <!-- HTML-Includes & Navigation -->
   <script src="https://www.w3schools.com/lib/w3.js"></script>
   <script src="../dom.js"></script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Käsespätzle mit Röstzwiebeln</title>
 </head>
 
 <body>
   <div class="layout">
+
+    <!-- Einheitlicher Header -->
     <header class="site-header">
       <div w3-include-html="../templates/header.html"></div>
     </header>
 
     <main class="page">
-      <div class="container">
-        <h1>Käsespätzle mit Röstzwiebeln</h1>
-        <img class="meal_image" src="../img/cheese-noodles-609776_1280.jpg" alt="meal Käsespätzle" />
 
-        <div class="recipe_meta">
-          <div class="meta">
-            <img src="../img/icons/clock-regular.svg" alt="icon clock" />
-            30 Min.
-          </div>
-          <div class="meta">
-            <img src="../img/icons/brain-solid.svg" alt="icon brain" />
-            simpel
-          </div>
-          <div class="meta">
-            <img src="../img/icons/calendar-alt-regular.svg" alt="icon calendar" />
-            04.12.2025
-          </div>
+      <!-- Hero-Bereich -->
+      <section class="container">
+        <h1>Käsespätzle mit Röstzwiebeln</h1>
+        <img src="../img/cheese-noodles-609776_1280.jpg" alt="Käsespätzle mit Röstzwiebeln">
+      </section>
+
+      <!-- Zeit / Schwierigkeit / Datum -->
+      <div class="cooking_bar">
+        <div class="cooking_label">
+          <img src="../img/icons/clock-regular.svg" alt="Zubereitungszeit">
+          <div>30 Min.</div>
         </div>
-        <hr class="separator" />
+        <div class="cooking_label">
+          <img src="../img/icons/brain-solid.svg" alt="Schwierigkeitsgrad">
+          <div>simpel</div>
+        </div>
+        <div class="cooking_label">
+          <img src="../img/icons/calendar-alt-regular.svg" alt="Datum">
+          <div>04.12.2025</div>
+        </div>
       </div>
 
-      <section class="recipe-content">
-        <div class="portion_container">
+      <div class="second_line"></div>
+
+      <!-- Zutaten + Portionsrechner -->
+      <section class="ingrediants">
+        <div class="calculator_bar">
           <span>Zutaten für</span>
-          <div class="portion_calculator">
-            <input type="number" id="portionInput" value="1" min="1" />
-            <button type="button" onclick="calculatePortions()">Portionen</button>
+
+          <div class="portion_box">
+            <input id="portionInput" type="number" min="1" max="10" value="1">
+            <button onclick="calculatePortions()">Portionen</button>
           </div>
         </div>
-
-        <section class="ingredients_table">
-          <table>
-            <tbody>
-              <tr>
-                <td>
-                  <span class="amount" data-base="1000">1000</span>g
-                </td>
-                <td>Spätzle</td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="amount" data-base="300">300</span>g
-                </td>
-                <td>Zwiebeln</td>
-              </tr>
-              <tr>
-                <td><span class="amount" data-base="250">250</span></td>
-                <td>würziger Käse</td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="amount" data-base="3">3</span>EL
-                </td>
-                <td>Mehl</td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="amount" data-base="75">75</span>g
-                </td>
-                <td>Sahne</td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="amount" data-base="50">50</span>g
-                </td>
-                <td>Butterschmalz</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>Salz, Pfeffer, Schnittlauch</td>
-              </tr>
-
-            </tbody>
-          </table>
-        </section>
       </section>
 
+      <!-- Zutaten-Tabelle -->
+      <section class="ingredients_table">
+        <table>
+          <tbody>
+            <tr>
+              <td class="amount" data-base="1000">1000</td>
+              <td>g Spätzle</td>
+            </tr>
+            <tr>
+              <td class="amount" data-base="300">300</td>
+              <td>g Zwiebeln</td>
+            </tr>
+            <tr>
+              <td class="amount" data-base="250">250</td>
+              <td>g würziger Käse</td>
+            </tr>
+            <tr>
+              <td class="amount" data-base="3">3</td>
+              <td>EL Mehl</td>
+            </tr>
+            <tr>
+              <td class="amount" data-base="75">75</td>
+              <td>g Sahne</td>
+            </tr>
+            <tr>
+              <td class="amount" data-base="50">50</td>
+              <td>g Butterschmalz</td>
+            </tr>
+            <tr>
+              <td class="amount" data-base="">–</td>
+              <td>Salz, Pfeffer, Schnittlauch</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
-      <section class="recipe_preparation">
+      <!-- Zubereitungsschritte -->
+      <section class="preparation">
         <h2>Zubereitung</h2>
 
-        <div class="preparation_meta">
-          <div class="meta">
-            <img src="../img/icons/clock-regular.svg" alt="icon clock" />
-            ca. 15 Minuten
+        <div class="cooking_bar">
+          <div class="cooking_label">
+            <img src="../img/icons/clock-regular.svg" alt="Arbeitszeit">
+            <div>ca. 15 Min.</div>
           </div>
-          <div class="meta">
-            <img src="../img/icons/clock-regular.svg" alt="icon clock" />
-            Gesamtzeit ca. 30 Minuten
+          <div class="cooking_label">
+            <img src="../img/icons/clock-regular.svg" alt="Gesamtzeit">
+            <div>Gesamtzeit ca. 30 Min.</div>
           </div>
         </div>
 
+        <ol class="preparation_steps">
+          <li>
+            Spätzle in kochendem Wasser garen, anschließend abtropfen lassen.
+          </li>
+          <li>
+            Zwiebeln halbieren, schälen und in dünne Halbringe schneiden. Die Zwiebelringe mit etwas Mehl
+            bestäuben und in Butterschmalz goldbraun braten, dann abtropfen lassen.
+          </li>
+          <li>
+            Käse fein reiben.
+          </li>
+          <li>
+            Pfanne kurz reduzieren, Sahne hinzufügen und nach Geschmack würzen.
+          </li>
+          <li>
+            Spätzle unter die Sahne mischen, geriebenen Käse darüber streuen und die Pfanne abdecken, bis der
+            Käse geschmolzen ist.
+          </li>
+          <li>
+            Käsespätzle auf Tellern anrichten und mit Röstzwiebeln und frischem Schnittlauch servieren.
+          </li>
+        </ol>
+      </section>
 
-        <div class="preparation_steps">
-          Die Spätzle in kochendem Wasser garen und anschließend abtropfen
-          lassen. Die Zwiebeln halbieren, schälen und in dünne Halbringe
-          schneiden. Die geschnittenen Zwiebelringe mit etwas Mehl bestäuben,
-          dann in Butterschmalz goldbraun braten und anschließend abtropfen
-          lassen. Den Käse fein reiben. Die Pfanne kurz reduzieren, die Sahne
-          hinzufügen und alles nach Geschmack würzen. Die Spätzle unter die
-          Sahne mischen, den geriebenen Käse darüber streuen und die Pfanne
-          abdecken, bis der Käse geschmolzen ist. Die Käsespätzle auf Tellern
-          anrichten und mit den goldbraunen Röstzwiebeln sowie frischem
-          Schnittlauch servieren.
-
+      <!-- Autor-Bereich -->
+      <section class="author">
+        <h2>Rezept erstellt von</h2>
+        <div>
+          <img src="../img/profile-lisa.JPEG" alt="Profilbild von Lisa">
+          Lisa
         </div>
       </section>
 
-      <aside>
-        <h3>Rezept erstellt von</h3>
-        <div class="recipe_author">
-          <img src="../img/profile-lisa.JPEG" alt="Profile picture of Lisa" />
-          <div class="profile_name">
-            <p>Lisa</p>
-          </div>
-        </div>
-      </aside>
     </main>
+
+    <!-- Einheitlicher Footer -->
     <footer class="site-footer">
       <div w3-include-html="../templates/footer.html"></div>
     </footer>
   </div>
+
+  <!-- Portionsrechner + HTML-Includes -->
   <script>
     function calculatePortions() {
-
-      let input = document.getElementById('portionInput');
-
-      let portions = Number(input.value);
+      const input = document.getElementById('portionInput');
+      let portions = parseInt(input.value, 10);
 
       if (isNaN(portions) || portions < 1) {
         portions = 1;
-        input.value = 1;
+        input.value = '1';
       }
 
-      let amounts = document.querySelectorAll('.amount');
+      if (portions > 10) {
+        portions = 10;
+        input.value = '10';
+      }
 
-      amounts.forEach(amount => {
-        let base = Number(amount.getAttribute('data-base'));
+      const amounts = document.querySelectorAll('.amount');
+
+      amounts.forEach((amount) => {
+        const baseAttr = amount.getAttribute('data-base');
+        if (!baseAttr) return;
+
+        const base = Number(baseAttr);
+        if (isNaN(base)) return;
+
         amount.textContent = base * portions;
       });
     }
-    w3.includeHTML(function () {
-      initNavigation();
-    });
+
+    w3.includeHTML(initNavigation);
   </script>
+
 </body>
 
 </html>

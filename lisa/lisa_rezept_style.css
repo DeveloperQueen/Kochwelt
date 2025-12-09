@@ -1,237 +1,165 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Raleway", sans-serif;
-  font-weight: 200;
-  font-size: 18px;
-  scroll-behavior: smooth;
+/* Hero-Bereich (Bild + Titel) */
+
+.container img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 16px;
 }
 
+/* Info-Chips: Zeit / Schwierigkeit / Datum */
 
-
-.container {
-  margin-top: 54px;
+.cooking_bar {
+    display: flex;
+    gap: 24px;
+    margin-top: 16px;
+    margin-bottom: 48px;
 }
 
-.container h1 {
-  margin-bottom: 25px;
+.cooking_label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    font-size: 18px;
 }
 
-.meal_image {
-  height: 220px;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 25px;
+.cooking_label img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    display: block;
 }
 
-.recipe_meta img,
-.preparation_meta img {
-  height: 15px;
-  width: 15px;
+/* dünne Linie zwischen Info-Chips und Zutaten */
+.second_line {
+    height: 1px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(123, 123, 130, 0.2);
 }
 
-.recipe_meta,
-.preparation_meta {
-  display: flex;
-  gap: 25px;
-  padding: 0px;
+/* Zutaten + Portionsrechner */
+
+.ingrediants {
+    margin-top: 16px;
+    font-size: 20px;
 }
 
-.meta {
-  border-radius: 10px;
-  background-color: rgba(239, 239, 239);
-  align-items: center;
-  display: flex;
-  gap: 10px;
-  padding: 8px;
+.calculator_bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
-.separator {
-  margin-top: 70px;
-  background-color: rgba(239, 239, 239);
-  height: 2px;
-  border: none;
-  margin-bottom: 18px;
+.portion_box {
+    display: flex;
+    height: 40px;
+    border: 2px solid #dcdcdc;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
-.portion_container {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  cursor: default;
-  margin-bottom: 18px;
-
+.portion_box input {
+    width: 120px;
+    border: none;
+    padding-left: 12px;
+    font-size: 18px;
+    outline: none;
 }
 
-.portion_container span {
-  font-size: 20px;
-}
-
-.portion_calculator {
-  display: flex;
-  border: 2px solid #ccc;
-  height: 45px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-input[type="number"] {
-  -webkit-appearance: none;
-  -moz-appearance: textfield;
-  appearance: none;
-  font-size: 16px;
-  display: flex;
-  border: none;
-  border-radius: 10px;
-  overflow: hidden;
-  padding-left: 7px;
-  width: 170px;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type="text"],
-input[type="number"],
-textarea {
-  cursor: text;
-}
-
-
-
-#portion_button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 2px #444 inset;
-}
-
-button,
-a {
-  cursor: pointer;
-}
-
-body,
-div,
-span,
-p,
-main {
-  cursor: default;
-}
+/* Zutaten-Tabelle */
 
 .ingredients_table table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 0px;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 16px;
 }
 
 .ingredients_table td {
-  padding: 20px;
-  font-size: 20px;
+    padding: 16px 24px;
+    font-size: 20px;
 }
 
 .ingredients_table td.amount {
-  width: 32px;
-  font-weight: 500;
+    width: 32px;
+    font-weight: 500;
 }
 
 .ingredients_table tr td:first-child {
-  width: 70px;
-  padding-right: 0;
-  white-space: nowrap;
-  border-radius: 10px 0 0 10px;
-  padding-left: 38px;
+    border-radius: 12px 0 0 12px;
 }
-
 
 .ingredients_table tr td:last-child {
-  border-radius: 0 10px 10px 0;
-  padding-left: 0px;
+    border-radius: 0 12px 12px 0;
 }
 
+/* abwechselnde Hintergrundfarben für Zeilen */
 .ingredients_table tr:nth-child(odd) td {
-  background-color: #f2f2f2;
+    background-color: #f2f2f2;
 }
 
 .ingredients_table tr:nth-child(even) td {
-  background-color: #ffffff;
+    background-color: #ffffff;
 }
 
-.recipe_preparation {
-  margin-top: 54px;
+/* Zubereitung */
+
+.preparation {
+    margin-top: 32px;
 }
 
 .preparation_steps {
-  margin-top: 40px;
-  margin-bottom: 55px;
+    list-style: none;
+    padding: 0;
 }
 
-.recipe_author {
-  display: flex;
-  align-items: center;
-  gap: 35px;
+/* Author-Bereich */
+
+.author div img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-.recipe_author img {
-  border-radius: 50%;
-  height: 100px;
-  width: 100px;
-  object-fit: cover;
+.author div {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 24px;
 }
-
-.profile_name {
-  font-size: 35px;
-}
-
-
 
 @media (max-width: 500px) {
-  h1 {
-    font-size: 24px;
-  }
 
-  .recipe_meta {
-    flex-direction: column;
-    gap: 12px;
-  }
+    .cooking_bar {
+        flex-direction: column;
+        gap: 12px;
+    }
 
-  .meta {
-    gap: 8px;
-    padding: 6px 14px;
+    .cooking_label {
+        gap: 8px;
+        padding: 6px 14px;
+        font-size: 16px;
+        width: 110px;
+    }
 
+    .cooking_label img {
+        width: 16px;
+        height: 16px;
+    }
 
-    font-size: 16px;
-    width: 115px;
-  }
+    .ingrediants {
+        font-size: 16px;
+    }
 
-  .recipe_meta img {
-    width: 16px;
-    height: 16px;
-  }
+    .calculator_bar {
+        gap: 8px;
+    }
 
-  .portion_container {
-    font-size: 16px;
-    gap: 10px;
-  }
-
-
-  .portion_calculator {
-    position: static;
-  }
-
-  .preparation_meta {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  #portion_button {
-    width: 128px;
-    left: 176px;
-  }
-
-  #portionInput {
-    width: 85px;
-  }
+    .portion_box input {
+        width: 60px;
+    }
 }

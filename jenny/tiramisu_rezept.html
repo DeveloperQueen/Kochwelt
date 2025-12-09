@@ -2,185 +2,211 @@
 <html lang="de">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tiramisu</title>
-  <link rel="stylesheet" href="jenny_rezept_style.css" />
-  <link rel="stylesheet" href="../style.css" />
-  <link rel="preconnect" href="../fonts/fonts.css">
-  <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32" />
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../fonts/fonts.css">
+
+  <link rel="stylesheet" href="./jenny_rezept_style.css">
+
+  <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32">
+
+  <!-- HTML-Includes & Navigation -->
   <script src="https://www.w3schools.com/lib/w3.js"></script>
   <script src="../dom.js"></script>
 </head>
 
-<div class="layout">
+<body>
+  <div class="layout">
 
-  <header class="site-header">
-    <div w3-include-html="../templates/header.html"></div>
-  </header>
+    <!-- Einheitlicher Header -->
+    <header class="site-header">
+      <div w3-include-html="../templates/header.html"></div>
+    </header>
 
-  <main class="page">
-    <h1>Tiramisu</h1>
+    <main class="page">
 
-    <img class="recipe-atf" src="../img/tiramisu.jpg" alt="" />
+      <!-- Hero-Bereich -->
+      <section class="container">
+        <h1>Tiramisu</h1>
+        <img src="../img/tiramisu.jpg" alt="Tiramisu">
+      </section>
 
-    <div class="recipe-info">
-      <div class="recipe-info-down">
-        <img class="recipes-icon" src="../img/icons/clock-regular.svg" />
-        <div>15 Min.</div>
+      <!-- Zeit / Schwierigkeit / Datum -->
+      <div class="cooking_bar">
+        <div class="cooking_label">
+          <img src="../img/icons/clock-regular.svg" alt="Zubereitungszeit">
+          <div>15 Min.</div>
+        </div>
+        <div class="cooking_label">
+          <img src="../img/icons/brain-solid.svg" alt="Schwierigkeitsgrad">
+          <div>simpel</div>
+        </div>
+        <div class="cooking_label">
+          <img src="../img/icons/calendar-alt-regular.svg" alt="Datum">
+          <div>07.12.2025</div>
+        </div>
       </div>
 
-      <div class="recipe-info-down">
-        <img class="recipes-icon" src="../img/icons/brain-solid.svg" />
-        <div>simpel</div>
-      </div>
-      <div class="recipe-info-down">
-        <img class="recipes-icon" src="../img/icons/calendar-alt-regular.svg" />
-        <div>07.12.2025</div>
-      </div>
-    </div>
+      <div class="second_line"></div>
 
-    <div class="border-line"></div>
+      <!-- Zutaten + Portionsrechner -->
+      <section class="ingrediants">
+        <div class="calculator_bar">
+          <span>Zutaten für</span>
 
-    <div class="calc-con">
-      <span>Zutaten für</span>
-      <input class="calc-input" id="portion" type="number" value="1" min="1" />
+          <div class="portion_box">
+            <input id="portionInput" type="number" min="1" max="10" value="1">
+            <button onclick="calculatePortions()">Portionen</button>
+          </div>
+        </div>
+      </section>
 
-      <button class="button" id="button" onclick="calculatePortions()">
-        Portionen
-      </button>
-    </div>
+      <!-- Zutaten-Tabelle -->
+      <section class="ingredients_table">
+        <table>
+          <tbody>
+            <tr>
+              <td class="amount" data-base="600">600</td>
+              <td>ml Kaffee</td>
+            </tr>
+            <tr>
+              <td class="amount" data-base="2">2</td>
+              <td>EL Zucker</td>
+            </tr>
+            <tr>
+              <td class="amount" data-base="6">6</td>
+              <td>EL Amaretto</td>
+            </tr>
+            <tr>
+              <td class="amount" data-base="4">4</td>
+              <td>Eigelbe</td>
+            </tr>
+            <tr>
+              <td class="amount" data-base="70">70</td>
+              <td>g Zucker</td>
+            </tr>
+            <tr>
+              <td class="amount" data-base="1">1</td>
+              <td>Prise Salz</td>
+            </tr>
+            <tr>
+              <td class="amount" data-base="750">750</td>
+              <td>g Mascarpone</td>
+            </tr>
+            <tr>
+              <td class="amount" data-base="100">100</td>
+              <td>g Schlagsahne</td>
+            </tr>
+            <tr>
+              <td class="amount" data-base="250">250</td>
+              <td>g Löffelbiskuits</td>
+            </tr>
+            <tr>
+              <td class="amount" data-base="">–</td>
+              <td>Kakaopulver zum Bestäuben</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
-    <table class="ingredients margin-recipe">
-      <tbody id="ingredientsTable">
-        <tr class="grey-deposit">
-          <td class="amount" data-base="600">600</td>
-          <td>ml</td>
-          <td>Kaffee</td>
-        </tr>
+      <!-- Zubereitungsschritte -->
+      <section class="preparation">
+        <h2>Zubereitung</h2>
 
-        <tr class="">
-          <td class="amount" data-base="2">2</td>
-          <td>EL</td>
-          <td>Zucker</td>
-        </tr>
+        <div class="cooking_bar">
+          <div class="cooking_label">
+            <img src="../img/icons/clock-regular.svg" alt="Arbeitszeit">
+            <div>ca. 15 Min.</div>
+          </div>
+          <div class="cooking_label">
+            <img src="../img/icons/clock-regular.svg" alt="Gesamtzeit">
+            <div>Gesamtzeit ca. 15 Min.</div>
+          </div>
+        </div>
 
-        <tr class="grey-deposit">
-          <td class="amount" data-base="6">6</td>
-          <td>EL</td>
-          <td>Amaretto</td>
-        </tr>
+        <ol class="preparation_steps">
+          <li>
+            Kaffee kochen, im heißen Zustand Zucker zugeben und verrühren. Etwas abkühlen lassen, dann den
+            Amaretto zugeben und beiseitestellen.
+          </li>
+          <li>
+            Eigelb mit Zucker und Salz mindestens 2 Minuten schaumig schlagen.
+          </li>
+          <li>
+            Mascarpone mit etwa 3 EL der Eigelb-Creme kurz glatt rühren. Anschließend die restliche
+            Eigelb-Creme vorsichtig unterheben.
+          </li>
+          <li>
+            Sahne steif schlagen und zuletzt behutsam unter die Mascarpone-Creme heben.
+          </li>
+          <li>
+            Löffelbiskuits nacheinander kurz in den abgekühlten Kaffee-Amaretto-Mix tauchen und dicht an
+            dicht den Boden einer Auflaufform (ca. 23 x 33 cm) bedecken. Etwas weniger als die Hälfte der
+            Mascarpone-Creme darauf verteilen und glatt streichen.
+          </li>
+          <li>
+            Eine zweite Schicht getränkter Löffelbiskuits darauf legen und leicht andrücken. Die restliche
+            Creme in einen Spritzbeutel mit Lochtülle füllen und die Biskuits mit Tuffs bedecken. Mindestens
+            2 Stunden kühl stellen.
+          </li>
+          <li>
+            Vor dem Servieren das Tiramisu großzügig mit Kakaopulver bestäuben.
+          </li>
+        </ol>
+      </section>
 
-        <tr class="">
-          <td class="amount" data-base="4">4</td>
-          <td></td>
-          <td>Eigelbe</td>
-        </tr>
+      <!-- Autor-Bereich -->
+      <section class="author">
+        <h2>Rezept erstellt von</h2>
+        <div>
+          <img src="../img/jenny_pic.jpg" alt="Profilbild von Jenny">
+          Jenny
+        </div>
+      </section>
 
-        <tr class="grey-deposit">
-          <td class="amount" data-base="70">70</td>
-          <td>g</td>
-          <td>Zucker</td>
-        </tr>
+    </main>
 
-        <tr class="">
-          <td class="amount" data-base="1">1</td>
-          <td>Prise</td>
-          <td>Salz</td>
-        </tr>
+    <!-- Einheitlicher Footer -->
+    <footer class="site-footer">
+      <div w3-include-html="../templates/footer.html"></div>
+    </footer>
+  </div>
 
-        <tr class="grey-deposit">
-          <td class="amount" data-base="750">750</td>
-          <td>g</td>
-          <td>Mascarpone</td>
-        </tr>
+  <!-- Portionsrechner + HTML-Includes -->
+  <script>
+    function calculatePortions() {
+      const input = document.getElementById('portionInput');
+      let portions = parseInt(input.value, 10);
 
-        <tr class="">
-          <td class="amount" data-base="100">100</td>
-          <td>g</td>
-          <td>Schlagsahne</td>
-        </tr>
+      if (isNaN(portions) || portions < 1) {
+        portions = 1;
+        input.value = '1';
+      }
 
-        <tr class="grey-deposit">
-          <td class="amount" data-base="250">250</td>
-          <td>g</td>
-          <td>Löffelbiskuits</td>
-        </tr>
+      if (portions > 10) {
+        portions = 10;
+        input.value = '10';
+      }
 
-        <tr class="">
-          <td colspan="3">etwas Kakaopulver zum bestreuen</td>
-        </tr>
-      </tbody>
-    </table>
+      const amounts = document.querySelectorAll('.amount');
 
-    <h2>Zubereitung</h2>
+      amounts.forEach((amount) => {
+        const baseAttr = amount.getAttribute('data-base');
+        if (!baseAttr) return;
 
-    <div class="recipe-info">
-      <div class="recipe-info-down">
-        <img class="recipes-icon" src="../img/icons/clock-regular.svg" />
-        <div>ca. 15 Minuten</div>
-      </div>
-      <div class="recipe-info-down">
-        <img class="recipes-icon" src="../img/icons/clock-regular.svg" />
-        <div>Gesamtzeit ca. 15 Minuten</div>
-      </div>
-    </div>
-    <div class="recipe-text">
-      <span>
-        Kaffee kochen, im heißen Zustand Zucker zugeben und verrühren. Etwas
-        abkühlen lassen. Im warmen Zustand den Amaretto zugeben und die
-        Flüssigkeit beiseite stellen. Eigelb mit Zucker und Salz mind. 2 Min
-        schaumig schlagen. Mascarpone und 3 EL der Eigelb-Creme mit einem
-        Schneebesen KURZ glatt rühren. Restliche Creme vorsichtig
-        unterheben. Sahne steif schlagen und zuletzt unter die Creme heben.
-        Löffelbiskuits einzeln kurz in den abgekühlten Kaffee tauchen und
-        dicht an dicht den Boden der Auflaufform (ca.23x33cm) bedecken.
-        Etwas weniger als die Hälfte der Mascarpone-Creme darauf geben und
-        glatt streichen. Erneut eine Schicht getränkter Löffelbiskuits
-        darauf verteilen und leicht andrücken. Restliche Creme in einen
-        Spritzbeutel mit Lochtülle füllen und die Biskuits mit Tuffs
-        bedecken. Mind. 2 Std. kühl stellen. vor dem Servieren üppig mit
-        Kakaopulver bestäuben.
-      </span>
-    </div>
+        const base = Number(baseAttr);
+        if (isNaN(base)) return;
 
-    <h3>Rezept erstellt von</h3>
-
-    <div class="recipe-author">
-      <img class="userpic" src="../img/jenny_pic.jpg" alt="" />
-      <div>Jenny</div>
-    </div>
-  </main>
-
-  <footer class="site-footer">
-    <div w3-include-html="../templates/footer.html"></div>
-  </footer>
-
-</div>
-
-<script>
-  function calculatePortions() {
-    let input = document.getElementById("portion");
-
-    let portions = Number(input.value);
-
-    if (isNaN(portions) || portions < 1) {
-      portions = 1;
-      input.value = 1;
+        amount.textContent = base * portions;
+      });
     }
 
-    let amounts = document.querySelectorAll(".amount");
-
-    amounts.forEach((amount) => {
-      let base = Number(amount.getAttribute("data-base"));
-      amount.textContent = base * portions;
-    });
-  }
-
-  w3.includeHTML(function () {
-    initNavigation();
-  });
-</script>
+    // HTML-Templates laden und danach Navigation initialisieren
+    w3.includeHTML(initNavigation);
+  </script>
 </body>
 
 </html>
